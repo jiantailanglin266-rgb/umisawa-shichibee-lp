@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Story } from "@/components/Story";
-import { Sanctuary } from "@/components/Sanctuary";
+import { PrayerSections } from "@/components/PrayerSections";
 import { Experience } from "@/components/Experience";
 import { Project } from "@/components/Project";
 import { Rewards } from "@/components/Rewards";
@@ -17,7 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <Story />
-        <Sanctuary />
+        <PrayerSections />
         <Experience />
         <Project />
         <Rewards />
