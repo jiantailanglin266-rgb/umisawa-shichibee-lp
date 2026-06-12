@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram } from "lucide-react";
-import { siteConfig, isMakuakeLive, navLinks } from "@/lib/site";
+import { siteConfig, isMakuakeLive, navLinks, asset } from "@/lib/site";
 
 export function Footer() {
   const year = 2026; // 固定（ビルド非依存）
@@ -13,7 +13,7 @@ export function Footer() {
           {/* ブランド */}
           <div className="md:col-span-5">
             <Image
-              src="/logo.png"
+              src={asset("/logo.png")}
               alt={siteConfig.name}
               width={112}
               height={112}

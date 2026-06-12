@@ -27,6 +27,14 @@ export const primaryCta = isMakuakeLive
   ? { label: "プロジェクトを支援する", href: siteConfig.makuakeUrl, external: true }
   : { label: "Makuake公開を通知", href: "#contact", external: false };
 
+/**
+ * 画像など public/ 配下の静的アセットのパスを返す。
+ * GitHub Pages のサブパス配信時は basePath を前置する
+ * （next/image は src へ basePath を自動付与しないため）。
+ */
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+export const asset = (path: string) => `${basePath}${path}`;
+
 export const navLinks = [
   { label: "物語", labelEn: "Story", href: "#story" },
   { label: "体験", labelEn: "Experience", href: "#experience" },

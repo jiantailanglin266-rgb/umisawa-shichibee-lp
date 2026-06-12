@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { gallery } from "@/lib/data";
+import { asset } from "@/lib/site";
 
 const ratioClass: Record<string, string> = {
   tall: "aspect-[3/4]",
@@ -63,7 +64,7 @@ export function Gallery() {
               {/* 画像（未配置時もグラデーションで成立する） */}
               <span
                 className="absolute inset-0 bg-gradient-to-br from-ink-card via-stone/20 to-ink bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url(${g.src})` }}
+                style={{ backgroundImage: `url(${asset(g.src)})` }}
               />
               <span className="absolute inset-0 bg-ink/20 transition-colors duration-500 group-hover:bg-ink/0" />
               <span className="absolute inset-x-0 bottom-0 translate-y-2 p-4 text-left text-xs tracking-wide text-cream/0 transition-all duration-500 group-hover:translate-y-0 group-hover:text-cream/90">
@@ -109,7 +110,7 @@ export function Gallery() {
           >
             <div
               className="aspect-[3/2] w-full rounded-lg border border-white/10 bg-gradient-to-br from-ink-card via-stone/20 to-ink bg-cover bg-center"
-              style={{ backgroundImage: `url(${gallery[index].src})` }}
+              style={{ backgroundImage: `url(${asset(gallery[index].src)})` }}
             />
             <figcaption className="mt-4 text-center text-sm tracking-wide text-cream/70">
               {gallery[index].alt}

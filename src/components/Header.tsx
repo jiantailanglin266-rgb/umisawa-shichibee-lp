@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { navLinks, primaryCta, siteConfig } from "@/lib/site";
+import { navLinks, primaryCta, siteConfig, asset } from "@/lib/site";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,7 +27,7 @@ export function Header() {
       <div className="container-x flex h-20 items-center justify-between">
         <a href="#hero" aria-label={siteConfig.name} className="group flex items-center">
           <Image
-            src="/logo.png"
+            src={asset("/logo.png")}
             alt={siteConfig.name}
             width={120}
             height={120}
