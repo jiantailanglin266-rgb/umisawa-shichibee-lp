@@ -1,11 +1,28 @@
 import type { NextConfig } from "next";
 
+/**
+ * GitHub Pages 公開時は環境変数 GITHUB_PAGES=true を立て、
+ * 静的書き出し（output: export）＋サブパス（/umisawa-shichibee-lp）に切替えます。
+ * ローカル開発・Vercel ではこれらは無効（通常の Next.js として動作）。
+ */
+const isPages = process.env.GITHUB_PAGES === "true";
+const repo = "umisawa-shichibee-lp";
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  ...(isPages
+    ? {
+        output: "export",
+        basePath: `/${repo}`,
+        assetPrefix: `/${repo}/`,
+        trailingSlash: true,
+      }
+    : {}),
   images: {
+    // 静的書き出しでは画像最適化サーバーが使えないため無効化
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
-      // microCMS の画像配信ドメイン（CMS 接続時に有効化）
       { protocol: "https", hostname: "images.microcms-assets.io" },
     ],
   },

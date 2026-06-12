@@ -1,37 +1,52 @@
 "use client";
 
-import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
+import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Check, Loader2 } from "lucide-react";
-import { subscribe, type SubscribeState } from "@/app/actions";
 import { SectionHeading } from "@/components/SectionHeading";
 
-const initialState: SubscribeState = { status: "idle", message: "" };
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <button
-      type="submit"
-      disabled={pending}
-      className="flex w-full items-center justify-center gap-2 rounded-full bg-gold py-4 text-sm font-medium tracking-widest2 text-ink transition-transform duration-300 hover:scale-[1.02] disabled:opacity-60"
-    >
-      {pending ? (
-        <>
-          <Loader2 size={18} className="animate-spin" />
-          送信中…
-        </>
-      ) : (
-        "登録する"
-      )}
-    </button>
-  );
-}
+type Status = "idle" | "loading" | "success" | "error";
 
+/**
+ * メール登録フォーム（静的サイト用・デモ）。
+ * GitHub Pages では実送信は行わず、入力検証と完了表示のみを行います。
+ * 実際にメール受信したい場合は Vercel + Resend（src/app/actions.ts を復活）、
+ * または Formspree 等の外部フォームサービスの endpoint に POST してください。
+ */
 export function Contact() {
-  const [state, formAction] = useActionState(subscribe, initialState);
+  const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const name = String(fd.get("name") ?? "").trim();
+    const email = String(fd.get("email") ?? "").trim();
+    const honey = String(fd.get("company") ?? "").trim();
+
+    if (honey) {
+      setStatus("success");
+      return;
+    }
+    if (!name) {
+      setError("お名前をご入力ください。");
+      setStatus("error");
+      return;
+    }
+    if (!EMAIL_RE.test(email)) {
+      setError("メールアドレスの形式をご確認ください。");
+      setStatus("error");
+      return;
+    }
+
+    setStatus("loading");
+    // デモ：静的サイトのため実送信は行いません。
+    await new Promise((r) => setTimeout(r, 700));
+    setStatus("success");
+  }
 
   return (
     <section id="contact" className="relative py-28 md:py-40">
@@ -47,7 +62,7 @@ export function Contact() {
           最初の支援者として、海沢 七兵衛の物語に加わってください。
         </p>
 
-        {state.status === "success" ? (
+        {status === "success" ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -64,7 +79,7 @@ export function Contact() {
             </p>
           </motion.div>
         ) : (
-          <form action={formAction} className="mt-12 space-y-5">
+          <form onSubmit={handleSubmit} className="mt-12 space-y-5">
             <div>
               <label
                 htmlFor="name"
@@ -112,17 +127,33 @@ export function Contact() {
               className="absolute left-[-9999px] h-0 w-0 opacity-0"
             />
 
-            {state.status === "error" && (
+            {status === "error" && (
               <p role="alert" className="text-sm text-red-300">
-                {state.message}
+                {error}
               </p>
             )}
 
-            <SubmitButton />
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-gold py-4 text-sm font-medium tracking-widest2 text-ink transition-transform duration-300 hover:scale-[1.02] disabled:opacity-60"
+            >
+              {status === "loading" ? (
+                <>
+                  <Loader2 size={18} className="animate-spin" />
+                  送信中…
+                </>
+              ) : (
+                "登録する"
+              )}
+            </button>
 
             <p className="text-center text-xs leading-relaxed text-stone">
               送信により
-              <Link href="/privacy" className="text-cream/70 underline underline-offset-2 hover:text-gold">
+              <Link
+                href="/privacy"
+                className="text-cream/70 underline underline-offset-2 hover:text-gold"
+              >
                 プライバシーポリシー
               </Link>
               に同意したものとみなされます。
