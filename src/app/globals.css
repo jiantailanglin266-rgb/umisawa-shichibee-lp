@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* 固定ヘッダー分のアンカーオフセット */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-ink text-cream font-serif antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: #b89b5e;
+    color: #0d0d0d;
+  }
+
+  /* 細いゴールドのスクロールバー */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0d0d;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2b2722;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b89b5e;
+  }
+
+  /* モーション抑制設定の尊重 */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* セクション共通の左右余白 */
+  .container-x {
+    @apply mx-auto w-full max-w-content px-6 md:px-10;
+  }
+
+  /* 英字の見出し（小さなラベル） */
+  .eyebrow {
+    @apply font-display text-sm uppercase tracking-widest2 text-gold;
+  }
+
+  /* 和文見出し */
+  .heading {
+    @apply font-serif font-medium leading-tight text-cream;
+  }
+
+  /* 罫線つきの装飾 */
+  .rule-gold {
+    @apply h-px w-12 bg-gold/60;
+  }
+
+  /* 縦書き（任意で使用） */
+  .vertical {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}
