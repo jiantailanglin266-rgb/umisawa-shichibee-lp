@@ -54,7 +54,8 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: siteConfig.ogImage,
+        // 絶対URL（GitHub Pages のサブパスでも正しく解決させる）
+        url: `${siteConfig.url}${siteConfig.ogImage}`,
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name}｜${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    images: [`${siteConfig.url}${siteConfig.ogImage}`],
   },
   robots: {
     index: true,

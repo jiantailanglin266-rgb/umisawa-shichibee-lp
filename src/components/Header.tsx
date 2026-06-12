@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { navLinks, primaryCta, siteConfig } from "@/lib/site";
 
@@ -24,13 +25,15 @@ export function Header() {
       }`}
     >
       <div className="container-x flex h-20 items-center justify-between">
-        <a href="#hero" className="group flex flex-col leading-none">
-          <span className="font-serif text-lg tracking-[0.15em] text-cream">
-            海沢 七兵衛
-          </span>
-          <span className="font-display text-[0.65rem] uppercase tracking-widest2 text-gold">
-            Sauna &amp; Spa
-          </span>
+        <a href="#hero" aria-label={siteConfig.name} className="group flex items-center">
+          <Image
+            src="/logo.png"
+            alt={siteConfig.name}
+            width={120}
+            height={120}
+            priority
+            className="h-14 w-14 rounded-full bg-white object-cover ring-1 ring-gold/30 transition-transform duration-500 group-hover:scale-105 md:h-16 md:w-16"
+          />
         </a>
 
         {/* PC ナビ */}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram } from "lucide-react";
 import { siteConfig, isMakuakeLive, navLinks } from "@/lib/site";
 
@@ -11,12 +12,13 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           {/* ブランド */}
           <div className="md:col-span-5">
-            <p className="font-serif text-xl tracking-[0.15em] text-cream">
-              海沢 七兵衛
-            </p>
-            <p className="mt-1 font-display text-sm uppercase tracking-widest2 text-gold">
-              Sauna &amp; Spa
-            </p>
+            <Image
+              src="/logo.png"
+              alt={siteConfig.name}
+              width={112}
+              height={112}
+              className="h-24 w-24 rounded-full bg-white object-cover ring-1 ring-gold/30"
+            />
             <p className="mt-6 max-w-sm text-sm leading-loose text-stone">
               「ととのいは、祈りに近い。」
               <br />

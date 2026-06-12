@@ -9,6 +9,8 @@ export function JsonLd() {
       "@type": "Organization",
       name: siteConfig.name,
       url: siteConfig.url,
+      logo: `${siteConfig.url}${siteConfig.logo}`,
+      image: `${siteConfig.url}${siteConfig.ogImage}`,
       description: siteConfig.description,
       sameAs: [siteConfig.instagram].filter(Boolean),
     },

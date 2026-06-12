@@ -13,7 +13,8 @@ export const siteConfig = {
     "東京・奥多摩 海沢。北欧サウナ × 日本仏教美 × 奥多摩の自然が交わる「現代の湯治場」。Makuake クラウドファンディング公開に向けたブランドプロジェクト。",
   location: "東京都西多摩郡奥多摩町 海沢",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://umisawa-shichibee.jp",
-  ogImage: "/og.jpg",
+  ogImage: "/og.png",
+  logo: "/logo.png",
   instagram: "https://www.instagram.com/",
   makuakeUrl: process.env.NEXT_PUBLIC_MAKUAKE_URL || "",
 } as const;
