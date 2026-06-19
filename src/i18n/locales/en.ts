@@ -198,14 +198,11 @@ const en: Dictionary = {
     eyebrow: "Gallery",
     title: "The unseen scenery of Unazawa.",
     alts: [
-      "Valley and forest of Unazawa, Okutama",
-      "Wood-fired sauna",
-      "Senju Kannon motif",
+      "A sauna cabin nestled in the forest by the stream",
       "The clear stream of Unazawa",
-      "Architectural rendering — exterior",
-      "Morning mist drifting through the forest",
-      "Open-air rest deck",
-      "Moss-covered rocks",
+      "A barrel sauna in the forest",
+      "Open-air cold bath beside the stream",
+      "Sauna goods — hats, towels, oils",
     ],
   },
   faq: {

@@ -31,18 +31,15 @@ export const rewardMeta: { price: string }[] = [
   { price: "30,000" },
 ];
 
-/* ── Gallery：画像（alt は辞書 gallery.alts と対応）──────────── */
-export type GalleryItem = { src: string; ratio: "tall" | "wide" | "square" };
+/* ── Gallery：画像（alt は辞書 gallery.alts と対応・5枚のマガジン構成）── */
+export type GalleryItem = { src: string };
 
 export const galleryItems: GalleryItem[] = [
-  { src: "/gallery/forest-01.jpg", ratio: "tall" },
-  { src: "/gallery/sauna-01.jpg", ratio: "square" },
-  { src: "/gallery/kannon-01.jpg", ratio: "tall" },
-  { src: "/gallery/water-01.jpg", ratio: "wide" },
-  { src: "/gallery/cg-exterior.jpg", ratio: "wide" },
-  { src: "/gallery/mist-01.jpg", ratio: "square" },
-  { src: "/gallery/rest-deck.jpg", ratio: "tall" },
-  { src: "/gallery/stone-01.jpg", ratio: "square" },
+  { src: "/gallery/forest-cabin.jpg" }, // 0: 森のサウナ小屋と渓流（横長・フィーチャー）
+  { src: "/gallery/stream.jpg" }, // 1: 海沢の清流（縦）
+  { src: "/gallery/barrel-sauna.jpg" }, // 2: バレルサウナ（縦）
+  { src: "/gallery/onsen.jpg" }, // 3: 露天水風呂・温浴（縦）
+  { src: "/gallery/goods.jpg" }, // 4: サウナグッズ（縦）
 ];
 
 /* ── PrayerSections：画像・アイコン種別・装飾（テキストは辞書 prayer.blocks）── */
