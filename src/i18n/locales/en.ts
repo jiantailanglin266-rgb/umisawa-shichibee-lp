@@ -205,6 +205,17 @@ const en: Dictionary = {
       "Sauna goods — hats, towels, oils",
     ],
   },
+  siteNow: {
+    eyebrow: "From the Site",
+    title: "Unazawa, as it is today.",
+    lead: "Not staged — an honest record. The prayers handed down, and the land soon to be reborn. We share the very scenery we see right now.",
+    items: [
+      { caption: "Land awaiting revival", alt: "The idle land of Unazawa and the village in the valley" },
+      { caption: "The forest hall", alt: "A small temple hall wrapped in greenery" },
+      { caption: "Enshrined prayer", alt: "A golden Buddha enshrined in the hall" },
+      { caption: "The spring water basin", alt: "A stone basin holding spring water" },
+    ],
+  },
   faq: {
     eyebrow: "FAQ",
     title: "Frequently Asked Questions",

@@ -202,6 +202,17 @@ const zh: Dictionary = {
       "桑拿用品（帽子・毛巾・精油）",
     ],
   },
+  siteNow: {
+    eyebrow: "From the Site",
+    title: "这，就是此刻的海沢。",
+    lead: "并非摆拍，而是真实的记录。代代相承的祈祷，与即将重生的土地。我们将此刻所见的景色，原样呈现给您。",
+    items: [
+      { caption: "等待重生的土地", alt: "等待重生的海沢土地与山谷村落" },
+      { caption: "森林中的小堂", alt: "被绿意环抱的森林小堂" },
+      { caption: "供奉的祈祷", alt: "供奉于堂中的金色佛像" },
+      { caption: "涌泉水盘", alt: "盛着涌泉之水的石制水盘" },
+    ],
+  },
   faq: {
     eyebrow: "FAQ",
     title: "常见问题",

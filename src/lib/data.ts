@@ -42,6 +42,14 @@ export const galleryItems: GalleryItem[] = [
   { src: "/gallery/goods.jpg" }, // 4: サウナグッズ（縦）
 ];
 
+/* ── SiteToday：現地の実写真（alt/caption は辞書 siteNow.items と対応）── */
+export const siteItems: { src: string }[] = [
+  { src: "/site/land.jpg" }, // 再生を待つ土地
+  { src: "/site/hall.jpg" }, // 森のお堂
+  { src: "/site/buddha.jpg" }, // 祀られた仏像
+  { src: "/site/basin.jpg" }, // 湧き水の水盤
+];
+
 /* ── PrayerSections：画像・アイコン種別・装飾（テキストは辞書 prayer.blocks）── */
 export const prayerMeta: {
   image: string;

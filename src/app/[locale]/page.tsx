@@ -4,6 +4,7 @@ import { Story } from "@/components/Story";
 import { PrayerSections } from "@/components/PrayerSections";
 import { Experience } from "@/components/Experience";
 import { Project } from "@/components/Project";
+import { SiteToday } from "@/components/SiteToday";
 import { Rewards } from "@/components/Rewards";
 import { Gallery } from "@/components/Gallery";
 import { FAQ } from "@/components/FAQ";
@@ -20,6 +21,7 @@ export default function Home() {
         <PrayerSections />
         <Experience />
         <Project />
+        <SiteToday />
         <Rewards />
         <Gallery />
         <FAQ />
