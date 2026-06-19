@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Globe, Check, ChevronDown } from "lucide-react";
@@ -22,6 +22,28 @@ export function LanguageSwitcher({ variant = "header" }: { variant?: "header" | 
   const { locale } = useI18n();
   const pathname = usePathname() || `/${locale}`;
   const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  // 外側クリック・Esc で閉じる（hover は使わずクリックトグルに統一）
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e: MouseEvent | TouchEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
 
   if (variant === "mobile") {
     return (
@@ -44,15 +66,11 @@ export function LanguageSwitcher({ variant = "header" }: { variant?: "header" | 
   }
 
   return (
-    <div
-      className="relative"
-      onMouseLeave={() => setOpen(false)}
-    >
+    <div ref={ref} className="relative">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        onMouseEnter={() => setOpen(true)}
-        aria-haspopup="true"
+        aria-haspopup="menu"
         aria-expanded={open}
         className="flex items-center gap-1.5 text-sm tracking-wide text-cream/80 transition-colors hover:text-cream"
       >
@@ -62,11 +80,15 @@ export function LanguageSwitcher({ variant = "header" }: { variant?: "header" | 
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-2 min-w-[9rem] overflow-hidden rounded-xl border border-white/10 bg-ink/95 py-1 backdrop-blur-md">
+        <div
+          role="menu"
+          className="absolute right-0 top-full z-50 mt-2 min-w-[9rem] overflow-hidden rounded-xl border border-white/10 bg-ink/95 py-1 backdrop-blur-md"
+        >
           {locales.map((l) => (
             <Link
               key={l}
               href={swapLocale(pathname, l)}
+              role="menuitem"
               onClick={() => setOpen(false)}
               className={`flex items-center justify-between gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-white/5 ${
                 l === locale ? "text-gold" : "text-cream/80"
