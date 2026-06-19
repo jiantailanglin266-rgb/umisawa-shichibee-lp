@@ -1,25 +1,27 @@
 import { siteConfig } from "@/lib/site";
-import { faqs } from "@/lib/data";
+import type { Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries";
 
-/** 構造化データ（JSON-LD）。組織情報・施設情報・FAQ を出力。 */
-export function JsonLd() {
+/** 構造化データ（JSON-LD）。組織・施設・FAQ をロケール別に出力。 */
+export function JsonLd({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+  const localeUrl = `${siteConfig.url}/${locale}`;
   const data = [
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: siteConfig.name,
-      url: siteConfig.url,
+      url: localeUrl,
       logo: `${siteConfig.url}${siteConfig.logo}`,
       image: `${siteConfig.url}${siteConfig.ogImage}`,
-      description: siteConfig.description,
+      description: dict.meta.description,
       sameAs: [siteConfig.instagram].filter(Boolean),
     },
     {
       "@context": "https://schema.org",
       "@type": "HealthAndBeautyBusiness",
       name: siteConfig.name,
-      description: siteConfig.description,
-      url: siteConfig.url,
+      description: dict.meta.description,
+      url: localeUrl,
       address: {
         "@type": "PostalAddress",
         addressCountry: "JP",
@@ -32,7 +34,8 @@ export function JsonLd() {
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: faqs.map((f) => ({
+      inLanguage: locale,
+      mainEntity: dict.faq.items.map((f) => ({
         "@type": "Question",
         name: f.q,
         acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -43,7 +46,6 @@ export function JsonLd() {
   return (
     <script
       type="application/ld+json"
-      // 静的な信頼できるデータのみを出力
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );

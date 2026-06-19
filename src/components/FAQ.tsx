@@ -4,9 +4,10 @@ import { useState } from "react";
 import { Plus } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
-import { faqs } from "@/lib/data";
+import { useI18n } from "@/components/LocaleProvider";
 
 export function FAQ() {
+  const { t } = useI18n();
   const [open, setOpen] = useState<number | null>(0);
 
   return (
@@ -15,10 +16,10 @@ export function FAQ() {
       className="relative border-y border-white/5 bg-ink-soft py-28 md:py-40"
     >
       <div className="container-x max-w-3xl">
-        <SectionHeading align="center" eyebrow="FAQ" title="よくあるご質問" />
+        <SectionHeading align="center" eyebrow={t.faq.eyebrow} title={t.faq.title} />
 
         <div className="mt-14 divide-y divide-white/10 border-y border-white/10">
-          {faqs.map((f, i) => {
+          {t.faq.items.map((f, i) => {
             const isOpen = open === i;
             return (
               <div key={f.q}>
@@ -28,9 +29,7 @@ export function FAQ() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-4 py-6 text-left"
                 >
-                  <span className="font-serif text-base text-cream md:text-lg">
-                    {f.q}
-                  </span>
+                  <span className="font-serif text-base text-cream md:text-lg">{f.q}</span>
                   <Plus
                     size={22}
                     className={`shrink-0 text-gold transition-transform duration-300 ${
@@ -48,9 +47,7 @@ export function FAQ() {
                       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-6 pr-8 leading-loose text-cream/70">
-                        {f.a}
-                      </p>
+                      <p className="pb-6 pr-8 leading-loose text-cream/70">{f.a}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

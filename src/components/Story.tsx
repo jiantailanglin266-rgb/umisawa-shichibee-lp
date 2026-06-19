@@ -1,21 +1,24 @@
+"use client";
+
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
-import { story } from "@/lib/data";
+import { useI18n } from "@/components/LocaleProvider";
 
 export function Story() {
+  const { t } = useI18n();
+  const story = t.story;
+
   return (
     <section id="story" className="relative py-28 md:py-40">
       <div className="container-x">
-        <SectionHeading eyebrow="Story" title={story.heading} />
+        <SectionHeading eyebrow={story.eyebrow} title={story.heading} />
 
         <div className="mt-16 grid gap-x-16 gap-y-12 md:mt-24 md:grid-cols-12">
-          {/* 縦書き風の章番号（装飾） */}
           <div className="hidden md:col-span-3 md:block">
             <Reveal className="sticky top-32">
-              <p className="font-display text-7xl italic text-gold/30">起</p>
+              <p className="font-display text-7xl italic text-gold/30">{story.asideKanji}</p>
               <p className="mt-6 max-w-[16rem] text-sm leading-loose text-stone">
-                奥多摩・海沢。打ち捨てられた土地に、変わらず流れ続ける清水があった。
-                ここから、ひとつの祈りの場所が始まります。
+                {story.asideText}
               </p>
             </Reveal>
           </div>
@@ -33,9 +36,7 @@ export function Story() {
                         {b.label}
                       </h3>
                     </div>
-                    <p className="text-pretty leading-loose text-cream/75">
-                      {b.text}
-                    </p>
+                    <p className="text-pretty leading-loose text-cream/75">{b.text}</p>
                   </article>
                 </Reveal>
               ))}

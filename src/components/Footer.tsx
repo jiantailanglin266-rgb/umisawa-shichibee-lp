@@ -1,10 +1,13 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
 import { Instagram } from "lucide-react";
-import { siteConfig, isMakuakeLive, navLinks, asset } from "@/lib/site";
+import { siteConfig, isMakuakeLive, navLinks } from "@/lib/site";
+import { useI18n } from "@/components/LocaleProvider";
 
 export function Footer() {
-  const year = 2026; // 固定（ビルド非依存）
+  const { locale, t } = useI18n();
+  const year = 2026;
 
   return (
     <footer className="border-t border-white/10 bg-ink py-16">
@@ -12,32 +15,29 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           {/* ブランド */}
           <div className="md:col-span-5">
-            <Image
-              src={asset("/logo.png")}
-              alt={siteConfig.name}
-              width={112}
-              height={112}
-              className="h-24 w-24 rounded-full bg-white object-cover ring-1 ring-gold/30"
-            />
+            <p className="font-serif text-xl tracking-[0.15em] text-cream">海沢 七兵衛</p>
+            <p className="mt-1 font-display text-sm uppercase tracking-widest2 text-gold">
+              Sauna &amp; Spa
+            </p>
             <p className="mt-6 max-w-sm text-sm leading-loose text-stone">
-              「ととのいは、祈りに近い。」
+              {t.footer.tagline}
               <br />
-              {siteConfig.location}
+              {t.footer.location}
             </p>
           </div>
 
           {/* ナビ */}
           <nav className="md:col-span-4">
-            <p className="text-xs tracking-widest2 text-stone">MENU</p>
+            <p className="text-xs tracking-widest2 text-stone">{t.footer.menu}</p>
             <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-3">
               {navLinks.map((l) => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
+                <li key={l.key}>
+                  <Link
+                    href={`/${locale}/#${l.anchor}`}
                     className="text-sm text-cream/75 transition-colors hover:text-gold"
                   >
-                    {l.label}
-                  </a>
+                    {t.nav[l.key as keyof typeof t.nav]}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -45,7 +45,7 @@ export function Footer() {
 
           {/* リンク */}
           <div className="md:col-span-3">
-            <p className="text-xs tracking-widest2 text-stone">FOLLOW</p>
+            <p className="text-xs tracking-widest2 text-stone">{t.footer.follow}</p>
             <div className="mt-5 flex gap-4">
               <a
                 href={siteConfig.instagram}
@@ -74,11 +74,11 @@ export function Footer() {
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-stone sm:flex-row">
           <p>© {year} 海沢 七兵衛 SAUNA &amp; SPA</p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="transition-colors hover:text-gold">
-              プライバシーポリシー
+            <Link href={`/${locale}/privacy`} className="transition-colors hover:text-gold">
+              {t.footer.privacy}
             </Link>
-            <Link href="/tokushoho" className="transition-colors hover:text-gold">
-              特定商取引法に基づく表記
+            <Link href={`/${locale}/tokushoho`} className="transition-colors hover:text-gold">
+              {t.footer.tokushoho}
             </Link>
           </div>
         </div>
