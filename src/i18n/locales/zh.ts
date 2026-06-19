@@ -206,6 +206,7 @@ const zh: Dictionary = {
     eyebrow: "From the Site",
     title: "这，就是此刻的海沢。",
     lead: "并非摆拍，而是真实的记录。代代相承的祈祷，与即将重生的土地。我们将此刻所见的景色，原样呈现给您。",
+    videoCaption: "在现场拍摄的、未经修饰的影像。",
     items: [
       { caption: "等待重生的土地", alt: "等待重生的海沢土地与山谷村落" },
       { caption: "森林中的小堂", alt: "被绿意环抱的森林小堂" },

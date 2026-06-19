@@ -23,7 +23,30 @@ export function SiteToday() {
           </p>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-2 gap-4 md:mt-20 md:grid-cols-4 md:gap-6">
+        {/* 現地で撮影した実写動画（自動再生・ミュート・ループ） */}
+        <Reveal>
+          <figure className="mx-auto mt-14 w-full max-w-[20rem]">
+            <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-white/10 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.7)] ring-1 ring-gold/15">
+              <video
+                className="h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={asset("/site/footage-poster.jpg")}
+              >
+                <source src={asset("/site/footage.mp4")} type="video/mp4" />
+              </video>
+              <span aria-hidden className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
+            </div>
+            <figcaption className="mt-4 text-center text-xs tracking-widest2 text-stone">
+              {s.videoCaption}
+            </figcaption>
+          </figure>
+        </Reveal>
+
+        <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
           {siteItems.map((item, i) => (
             <motion.figure
               key={item.src}

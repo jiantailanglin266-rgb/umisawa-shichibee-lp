@@ -209,6 +209,7 @@ const en: Dictionary = {
     eyebrow: "From the Site",
     title: "Unazawa, as it is today.",
     lead: "Not staged — an honest record. The prayers handed down, and the land soon to be reborn. We share the very scenery we see right now.",
+    videoCaption: "Unedited footage filmed on site.",
     items: [
       { caption: "Land awaiting revival", alt: "The idle land of Unazawa and the village in the valley" },
       { caption: "The forest hall", alt: "A small temple hall wrapped in greenery" },

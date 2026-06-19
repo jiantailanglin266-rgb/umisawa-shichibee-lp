@@ -206,6 +206,7 @@ const ko: Dictionary = {
     eyebrow: "From the Site",
     title: "이것이, 지금의 우나자와.",
     lead: "연출이 아닌, 있는 그대로의 기록. 이어져 온 기도와, 앞으로 다시 태어날 땅. 우리가 지금 보고 있는 풍경을 그대로 전합니다.",
+    videoCaption: "현지에서 촬영한, 있는 그대로의 영상.",
     items: [
       { caption: "재생을 기다리는 땅", alt: "재생을 기다리는 우나자와의 땅과 골짜기 마을" },
       { caption: "숲속의 사당", alt: "초록에 둘러싸인 숲속의 작은 사당" },
