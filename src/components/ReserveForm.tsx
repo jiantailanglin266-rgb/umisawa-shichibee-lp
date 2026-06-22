@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Check, Loader2, Minus, Plus, CalendarDays, Clock, Users } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { bcp47 } from "@/i18n/config";
+import { submitForm } from "@/lib/site";
 import { useI18n } from "@/components/LocaleProvider";
 
 const SLOTS = ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"];
@@ -76,19 +77,40 @@ export function ReserveForm() {
     });
   };
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const name = String(fd.get("name") ?? "").trim();
     const email = String(fd.get("email") ?? "").trim();
+    const notes = String(fd.get("notes") ?? "").trim();
     const honey = String(fd.get("company") ?? "").trim();
     if (honey) return setStatus("success");
     if (!selected) return setErr(r.errDate);
     if (!time) return setErr(r.errTime);
     if (!name) return setErr(r.errName);
     if (!EMAIL_RE.test(email)) return setErr(r.errEmail);
+
     setStatus("loading");
-    setTimeout(() => setStatus("success"), 700);
+    const dateStr = selected
+      ? `${selected.getFullYear()}-${String(selected.getMonth() + 1).padStart(2, "0")}-${String(selected.getDate()).padStart(2, "0")}`
+      : "";
+    const ok = await submitForm({
+      _subject: `【予約リクエスト】${name} / ${dateStr} ${time}`,
+      name,
+      email,
+      date: dateStr,
+      time: time ?? "",
+      plan: r.plans[plan],
+      guests: String(guests),
+      notes,
+      locale,
+      source: "reserve",
+    });
+    if (ok) {
+      setStatus("success");
+    } else {
+      setErr(r.errSend);
+    }
   }
   const setErr = (m: string) => {
     setError(m);

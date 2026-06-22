@@ -28,6 +28,33 @@ export const siteConfig = {
 export const isMakuakeLive = Boolean(siteConfig.makuakeUrl);
 
 /**
+ * フォーム送信（Formspree）。
+ * NEXT_PUBLIC_FORMSPREE_ID を設定すると実送信、未設定ならデモ（成功扱い）。
+ * 静的サイト（GitHub Pages）のままメール受信できます。
+ * 取得: https://formspree.io で無料フォームを作成し、フォームIDを設定。
+ */
+export const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || "";
+export const isFormLive = Boolean(formspreeId);
+
+export async function submitForm(data: Record<string, string>): Promise<boolean> {
+  // 未設定時はデモ（送信せず成功扱い）
+  if (!formspreeId) {
+    await new Promise((r) => setTimeout(r, 600));
+    return true;
+  }
+  try {
+    const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      method: "POST",
+      headers: { Accept: "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+/**
  * 主CTA（公開状態＋言語に応じてラベル・遷移先を決定）。
  * 公開前は事前通知フォームへ、公開後は Makuake へ。
  * @param locale 現在のロケール（同一ページ内アンカーへ遷移するため使用）

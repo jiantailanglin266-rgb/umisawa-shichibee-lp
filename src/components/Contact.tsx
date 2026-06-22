@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Check, Loader2 } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
+import { submitForm } from "@/lib/site";
 import { useI18n } from "@/components/LocaleProvider";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -44,8 +45,19 @@ export function Contact() {
     }
 
     setStatus("loading");
-    await new Promise((r) => setTimeout(r, 700));
-    setStatus("success");
+    const ok = await submitForm({
+      name,
+      email,
+      _subject: `【事前通知登録】${name}`,
+      locale,
+      source: "contact",
+    });
+    if (ok) {
+      setStatus("success");
+    } else {
+      setError(c.errSend);
+      setStatus("error");
+    }
   }
 
   return (

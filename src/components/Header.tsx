@@ -66,7 +66,7 @@ export function Header() {
       <div className="container-x flex h-20 items-center justify-between">
         <Link href={`/${locale}/`} aria-label={siteConfig.name} className="group flex items-center">
           <Image
-            src={asset("/logo.png")}
+            src={asset("/logo-mark.webp")}
             alt={siteConfig.name}
             width={120}
             height={120}
