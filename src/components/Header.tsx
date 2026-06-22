@@ -96,16 +96,19 @@ export function Header() {
           </a>
         </nav>
 
-        {/* モバイルトグル */}
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="text-cream lg:hidden"
-        >
-          {open ? <X size={26} /> : <Menu size={26} />}
-        </button>
+        {/* モバイル：言語切替＋トグル（常時表示で分かりやすく） */}
+        <div className="flex items-center gap-4 lg:hidden">
+          <LanguageSwitcher />
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="text-cream"
+          >
+            {open ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
       </div>
 
       {/* モバイルメニュー（グループ見出し付き） */}

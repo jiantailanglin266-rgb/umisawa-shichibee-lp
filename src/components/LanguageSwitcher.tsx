@@ -75,7 +75,7 @@ export function LanguageSwitcher({ variant = "header" }: { variant?: "header" | 
         className="flex items-center gap-1.5 text-sm tracking-wide text-cream/80 transition-colors hover:text-cream"
       >
         <Globe size={16} strokeWidth={1.5} />
-        <span className="hidden xl:inline">{localeNames[locale]}</span>
+        <span className="inline lg:hidden xl:inline">{localeNames[locale]}</span>
         <ChevronDown size={14} className={`transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
 
