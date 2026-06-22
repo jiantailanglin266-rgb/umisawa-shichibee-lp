@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { MapPin, Train, Car, Clock, ArrowRight, ExternalLink } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -11,9 +12,29 @@ const MAP_QUERY = "東京都西多摩郡奥多摩町海沢";
 const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=12&output=embed`;
 const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`;
 
+// 動画の再生速度（1 = 等速。小さいほどゆっくり）
+const ROUTE_PLAYBACK_RATE = 0.5;
+
 export function AccessContent() {
   const { t } = useI18n();
   const a = t.access;
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // 「駐車場からの道のり」をゆっくり再生
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const apply = () => {
+      v.playbackRate = ROUTE_PLAYBACK_RATE;
+    };
+    apply();
+    v.addEventListener("loadedmetadata", apply);
+    v.addEventListener("play", apply);
+    return () => {
+      v.removeEventListener("loadedmetadata", apply);
+      v.removeEventListener("play", apply);
+    };
+  }, []);
 
   return (
     <section className="relative py-28 md:py-36">
@@ -108,6 +129,7 @@ export function AccessContent() {
             </figcaption>
             <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-white/10 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.7)] ring-1 ring-gold/15">
               <video
+                ref={videoRef}
                 className="h-full w-full object-cover"
                 autoPlay
                 muted
