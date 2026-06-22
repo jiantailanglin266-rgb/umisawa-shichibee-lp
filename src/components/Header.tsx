@@ -3,11 +3,14 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import { navLinks, getPrimaryCta, siteConfig, asset } from "@/lib/site";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { getPrimaryCta, siteConfig, asset } from "@/lib/site";
 import { useI18n } from "@/components/LocaleProvider";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { SocialLinks } from "@/components/SocialLinks";
+
+type Item = { label: string; href: string };
+type Group = { label: string; items: Item[] };
 
 export function Header() {
   const { locale, t } = useI18n();
@@ -22,12 +25,41 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const menu: Group[] = [
+    {
+      label: t.nav.groupDiscover,
+      items: [
+        { label: t.nav.story, href: `/${locale}/#story` },
+        { label: t.nav.experience, href: `/${locale}/#experience` },
+        { label: t.nav.gallery, href: `/${locale}/#gallery` },
+        { label: t.nav.journal, href: `/${locale}/journal` },
+        { label: t.nav.about, href: `/${locale}/about` },
+      ],
+    },
+    {
+      label: t.nav.groupVisit,
+      items: [
+        { label: t.nav.access, href: `/${locale}/access` },
+        { label: t.nav.pricing, href: `/${locale}/pricing` },
+        { label: t.nav.guide, href: `/${locale}/guide` },
+        { label: t.nav.reserve, href: `/${locale}/reserve` },
+        { label: t.nav.faq, href: `/${locale}/#faq` },
+      ],
+    },
+    {
+      label: t.nav.groupProject,
+      items: [
+        { label: t.nav.project, href: `/${locale}/#project` },
+        { label: t.nav.rewards, href: `/${locale}/#rewards` },
+        { label: t.nav.news, href: `/${locale}/news` },
+      ],
+    },
+  ];
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
-        scrolled
-          ? "bg-ink/85 backdrop-blur-md border-b border-white/5"
-          : "bg-transparent"
+        scrolled ? "bg-ink/85 backdrop-blur-md border-b border-white/5" : "bg-transparent"
       }`}
     >
       <div className="container-x flex h-20 items-center justify-between">
@@ -42,32 +74,34 @@ export function Header() {
           />
         </Link>
 
-        {/* PC ナビ */}
-        <nav className="hidden items-center gap-6 lg:flex">
-          {navLinks.map((l) => (
-            <Link
-              key={l.key}
-              href={`/${locale}/#${l.anchor}`}
-              className="group relative text-sm tracking-wide text-cream/80 transition-colors hover:text-cream"
-            >
-              {t.nav[l.key as keyof typeof t.nav]}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-            </Link>
+        {/* PC ナビ（グループ別ドロップダウン） */}
+        <nav className="hidden items-center gap-7 lg:flex">
+          {menu.map((g) => (
+            <div key={g.label} className="group relative">
+              <button
+                type="button"
+                className="flex items-center gap-1 text-sm tracking-wide text-cream/80 transition-colors group-hover:text-cream"
+              >
+                {g.label}
+                <ChevronDown size={14} className="text-gold/70 transition-transform duration-300 group-hover:rotate-180" />
+              </button>
+              {/* pt-3 がボタンとパネルの隙間を埋め、ホバー継続を保証 */}
+              <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div className="min-w-[12rem] overflow-hidden rounded-xl border border-white/10 bg-ink/95 py-1.5 backdrop-blur-md">
+                  {g.items.map((it) => (
+                    <Link
+                      key={it.href}
+                      href={it.href}
+                      className="block px-5 py-2.5 text-sm tracking-wide text-cream/80 transition-colors hover:bg-white/5 hover:text-gold"
+                    >
+                      {it.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           ))}
-          <Link
-            href={`/${locale}/access`}
-            className="group relative text-sm tracking-wide text-cream/80 transition-colors hover:text-cream"
-          >
-            {t.nav.access}
-            <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-          </Link>
-          <Link
-            href={`/${locale}/reserve`}
-            className="group relative text-sm tracking-wide text-gold transition-colors hover:text-cream"
-          >
-            {t.nav.reserve}
-            <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-          </Link>
+
           <span className="hidden h-4 w-px bg-white/15 xl:block" />
           <div className="hidden xl:block">
             <SocialLinks />
@@ -95,82 +129,42 @@ export function Header() {
         </button>
       </div>
 
-      {/* モバイルメニュー */}
+      {/* モバイルメニュー（グループ見出し付き） */}
       <div
-        className={`overflow-hidden border-t border-white/5 bg-ink/95 backdrop-blur-md transition-[max-height] duration-500 lg:hidden ${
-          open ? "max-h-[36rem]" : "max-h-0"
+        className={`overflow-y-auto overflow-x-hidden border-t border-white/5 bg-ink/95 backdrop-blur-md transition-[max-height] duration-500 lg:hidden ${
+          open ? "max-h-[80vh]" : "max-h-0"
         }`}
       >
-        <nav className="container-x flex flex-col gap-1 py-4">
-          {navLinks.map((l) => (
-            <Link
-              key={l.key}
-              href={`/${locale}/#${l.anchor}`}
-              onClick={() => setOpen(false)}
-              className="flex items-baseline justify-between border-b border-white/5 py-3 text-cream/85"
-            >
-              <span className="tracking-wide">{t.nav[l.key as keyof typeof t.nav]}</span>
-            </Link>
+        <nav className="container-x flex flex-col gap-5 py-6">
+          {menu.map((g) => (
+            <div key={g.label}>
+              <p className="text-xs tracking-widest2 text-gold/80">{g.label}</p>
+              <div className="mt-2 flex flex-col">
+                {g.items.map((it) => (
+                  <Link
+                    key={it.href}
+                    href={it.href}
+                    onClick={() => setOpen(false)}
+                    className="border-b border-white/5 py-2.5 text-cream/85"
+                  >
+                    {it.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           ))}
-          <Link
-            href={`/${locale}/access`}
-            onClick={() => setOpen(false)}
-            className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"
-          >
-            <span className="tracking-wide">{t.nav.access}</span>
-          </Link>
-          <Link
-            href={`/${locale}/pricing`}
-            onClick={() => setOpen(false)}
-            className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"
-          >
-            <span className="tracking-wide">{t.nav.pricing}</span>
-          </Link>
-          <Link
-            href={`/${locale}/guide`}
-            onClick={() => setOpen(false)}
-            className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"
-          >
-            <span className="tracking-wide">{t.nav.guide}</span>
-          </Link>
-          <Link
-            href={`/${locale}/news`}
-            onClick={() => setOpen(false)}
-            className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"
-          >
-            <span className="tracking-wide">{t.nav.news}</span>
-          </Link>
-          <Link
-            href={`/${locale}/journal`}
-            onClick={() => setOpen(false)}
-            className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"
-          >
-            <span className="tracking-wide">{t.nav.journal}</span>
-          </Link>
-          <Link
-            href={`/${locale}/about`}
-            onClick={() => setOpen(false)}
-            className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"
-          >
-            <span className="tracking-wide">{t.nav.about}</span>
-          </Link>
-          <Link
-            href={`/${locale}/reserve`}
-            onClick={() => setOpen(false)}
-            className="flex items-center justify-between border-b border-white/5 py-3 text-gold"
-          >
-            <span className="tracking-wide">{t.nav.reserve}</span>
-          </Link>
+
           <a
             href={cta.href}
             target={cta.external ? "_blank" : undefined}
             rel={cta.external ? "noopener noreferrer" : undefined}
             onClick={() => setOpen(false)}
-            className="mt-3 rounded-full bg-gold py-3 text-center text-sm font-medium tracking-wide text-ink"
+            className="mt-1 rounded-full bg-gold py-3 text-center text-sm font-medium tracking-wide text-ink"
           >
             {cta.label}
           </a>
-          <div className="mt-5 flex items-center justify-between gap-4">
+
+          <div className="flex items-center justify-between gap-4">
             <LanguageSwitcher variant="mobile" />
             <SocialLinks />
           </div>

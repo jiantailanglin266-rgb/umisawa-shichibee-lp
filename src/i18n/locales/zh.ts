@@ -21,6 +21,9 @@ const zh: Dictionary = {
     journal: "专栏",
     pricing: "价格・方案",
     guide: "使用指南",
+    groupDiscover: "探索",
+    groupVisit: "到访",
+    groupProject: "项目",
   },
   cta: {
     notify: "Makuake 公开时通知我",

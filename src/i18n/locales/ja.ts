@@ -19,6 +19,9 @@ const ja = {
     journal: "ジャーナル",
     pricing: "料金・プラン",
     guide: "ご利用案内",
+    groupDiscover: "めぐる",
+    groupVisit: "訪れる",
+    groupProject: "プロジェクト",
   },
   cta: {
     notify: "Makuake公開を通知",

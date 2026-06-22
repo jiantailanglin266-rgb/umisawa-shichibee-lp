@@ -21,6 +21,9 @@ const ko: Dictionary = {
     journal: "저널",
     pricing: "요금・플랜",
     guide: "이용 안내",
+    groupDiscover: "둘러보기",
+    groupVisit: "방문",
+    groupProject: "프로젝트",
   },
   cta: {
     notify: "Makuake 공개 알림 받기",

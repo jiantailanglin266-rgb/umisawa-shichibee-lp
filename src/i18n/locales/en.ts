@@ -21,6 +21,9 @@ const en: Dictionary = {
     journal: "Journal",
     pricing: "Pricing",
     guide: "Guide",
+    groupDiscover: "Discover",
+    groupVisit: "Visit",
+    groupProject: "Project",
   },
   cta: {
     notify: "Get notified on Makuake",
