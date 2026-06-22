@@ -30,7 +30,7 @@ const ja = {
   },
   hero: {
     eyebrow: "UNAZAWA SHICHIBEE — Okutama",
-    titleLines: ["ととのいは、", "祈りに近い。"],
+    titleLines: ["ととのいは", "祈りに近い"],
     subLines: ["海沢の自然に抱かれ、", "深い静寂の中で自分を取り戻す。"],
     scrollAria: "下へスクロール",
     slideAlts: [
