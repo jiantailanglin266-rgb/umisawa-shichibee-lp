@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram } from "lucide-react";
 import { siteConfig, isMakuakeLive, navLinks } from "@/lib/site";
 import { useI18n } from "@/components/LocaleProvider";
+import { SocialLinks } from "@/components/SocialLinks";
 
 export function Footer() {
   const { locale, t } = useI18n();
@@ -46,16 +46,8 @@ export function Footer() {
           {/* リンク */}
           <div className="md:col-span-3">
             <p className="text-xs tracking-widest2 text-stone">{t.footer.follow}</p>
-            <div className="mt-5 flex gap-4">
-              <a
-                href={siteConfig.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-cream/80 transition-colors hover:border-gold hover:text-gold"
-              >
-                <Instagram size={18} />
-              </a>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <SocialLinks variant="footer" />
               {isMakuakeLive && (
                 <a
                   href={siteConfig.makuakeUrl}

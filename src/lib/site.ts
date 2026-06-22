@@ -15,7 +15,12 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://unazawa-shichibee.jp",
   ogImage: "/og.png",
   logo: "/logo.png",
-  instagram: "https://www.instagram.com/",
+  social: {
+    instagram: "https://www.instagram.com/business.only1818/",
+    x: "https://x.com/SAUNASPAn63y",
+    youtube:
+      "https://www.youtube.com/@%E6%B5%B7%E6%B2%A2%E4%B8%83%E5%85%B5%E8%A1%9BSAUNASPA",
+  },
   makuakeUrl: process.env.NEXT_PUBLIC_MAKUAKE_URL || "",
 } as const;
 

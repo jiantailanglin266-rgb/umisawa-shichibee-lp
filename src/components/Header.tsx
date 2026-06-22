@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { navLinks, getPrimaryCta, siteConfig, asset } from "@/lib/site";
 import { useI18n } from "@/components/LocaleProvider";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { SocialLinks } from "@/components/SocialLinks";
 
 export function Header() {
   const { locale, t } = useI18n();
@@ -53,6 +54,8 @@ export function Header() {
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
+          <span className="h-4 w-px bg-white/15" />
+          <SocialLinks />
           <LanguageSwitcher />
           <a
             href={cta.href}
@@ -102,8 +105,9 @@ export function Header() {
           >
             {cta.label}
           </a>
-          <div className="mt-4">
+          <div className="mt-5 flex items-center justify-between gap-4">
             <LanguageSwitcher variant="mobile" />
+            <SocialLinks />
           </div>
         </nav>
       </div>

@@ -14,7 +14,7 @@ export function JsonLd({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       logo: `${siteConfig.url}${siteConfig.logo}`,
       image: `${siteConfig.url}${siteConfig.ogImage}`,
       description: dict.meta.description,
-      sameAs: [siteConfig.instagram].filter(Boolean),
+      sameAs: [siteConfig.social.instagram, siteConfig.social.x, siteConfig.social.youtube].filter(Boolean),
     },
     {
       "@context": "https://schema.org",
