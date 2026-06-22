@@ -120,6 +120,20 @@ export function Header() {
             <span className="tracking-wide">{t.nav.access}</span>
           </Link>
           <Link
+            href={`/${locale}/pricing`}
+            onClick={() => setOpen(false)}
+            className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"
+          >
+            <span className="tracking-wide">{t.nav.pricing}</span>
+          </Link>
+          <Link
+            href={`/${locale}/guide`}
+            onClick={() => setOpen(false)}
+            className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"
+          >
+            <span className="tracking-wide">{t.nav.guide}</span>
+          </Link>
+          <Link
             href={`/${locale}/news`}
             onClick={() => setOpen(false)}
             className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"

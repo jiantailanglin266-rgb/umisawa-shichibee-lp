@@ -50,6 +50,22 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href={`/${locale}/pricing`}
+                  className="text-sm text-cream/75 transition-colors hover:text-gold"
+                >
+                  {t.nav.pricing}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/guide`}
+                  className="text-sm text-cream/75 transition-colors hover:text-gold"
+                >
+                  {t.nav.guide}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href={`/${locale}/news`}
                   className="text-sm text-cream/75 transition-colors hover:text-gold"
                 >

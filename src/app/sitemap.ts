@@ -27,6 +27,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({ url: `${base}/${locale}/journal/${m.slug}`, changeFrequency: "monthly", priority: 0.5 });
     }
     entries.push({ url: `${base}/${locale}/access`, changeFrequency: "monthly", priority: 0.7 });
+    entries.push({ url: `${base}/${locale}/pricing`, changeFrequency: "monthly", priority: 0.7 });
+    entries.push({ url: `${base}/${locale}/guide`, changeFrequency: "monthly", priority: 0.6 });
     entries.push({ url: `${base}/${locale}/reserve`, changeFrequency: "monthly", priority: 0.7 });
     entries.push({ url: `${base}/${locale}/privacy`, changeFrequency: "yearly", priority: 0.2 });
     entries.push({ url: `${base}/${locale}/tokushoho`, changeFrequency: "yearly", priority: 0.2 });
