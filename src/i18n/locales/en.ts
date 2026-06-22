@@ -153,10 +153,9 @@ const en: Dictionary = {
     crowdfundingLabel: "Crowdfunding launch",
     crowdfundingDate: "July 2026",
     goalLabel: "Funding goal",
-    progressUnit: "",
-    progressCaption: "Pre-launch registrations",
-    goalCaption: "Goal",
-    usageHeading: "How funds will be used",
+    statusValue: "Preparing for the Makuake launch",
+    statusNote: "Crowdfunding progress will be shared here once the campaign goes live.",
+    usageHeading: "How funds will be used (planned)",
     usage: [
       "Building the wood-fired sauna & cold bath",
       "Open-air deck & rest lodge",
@@ -207,6 +206,8 @@ const en: Dictionary = {
   gallery: {
     eyebrow: "Gallery",
     title: "The unseen scenery of Unazawa.",
+    imageNote: "* Images are concept visuals and may differ from the actual facility.",
+    imageBadge: "Concept",
     alts: [
       "A sauna cabin nestled in the forest by the stream",
       "The clear stream of Unazawa",

@@ -18,7 +18,6 @@ export const experienceMeta: { kanji: string; titleEn: string; icon: LucideIcon 
 /* ── Project：数値（ラベル等は辞書 project と対応）──────────── */
 export const projectMeta = {
   goalAmount: "8,000,000",
-  progress: { current: 1240, target: 3000 },
   usagePercents: [45, 25, 20, 10],
 };
 

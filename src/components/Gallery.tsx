@@ -52,8 +52,11 @@ export function Gallery() {
     <section id="gallery" className="relative py-28 md:py-40">
       <div className="container-x">
         <SectionHeading align="center" eyebrow={t.gallery.eyebrow} title={t.gallery.title} />
+        <p className="mx-auto mt-6 max-w-xl text-center text-xs leading-relaxed text-stone">
+          {t.gallery.imageNote}
+        </p>
 
-        <div className="mt-16 grid grid-cols-2 gap-3 md:grid-cols-12 md:auto-rows-[10rem] md:gap-4">
+        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-12 md:auto-rows-[10rem] md:gap-4">
           {galleryItems.map((g, i) => (
             <button
               key={g.src}
@@ -70,6 +73,9 @@ export function Gallery() {
                 className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
               />
               <span className="absolute inset-0 bg-ink/15 transition-colors duration-500 group-hover:bg-ink/0" />
+              <span className="pointer-events-none absolute right-2 top-2 rounded-full bg-ink/65 px-2.5 py-1 text-[0.6rem] tracking-widest2 text-cream/85 backdrop-blur-sm">
+                {t.gallery.imageBadge}
+              </span>
               <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-4 text-left text-xs tracking-wide text-cream/0 transition-all duration-500 group-hover:text-cream/95">
                 {alts[i]}
               </span>
@@ -119,6 +125,7 @@ export function Gallery() {
             </div>
             <figcaption className="mt-4 shrink-0 text-center text-sm tracking-wide text-cream/70">
               {alts[index]}
+              <span className="ml-2 text-xs text-stone">（{t.gallery.imageBadge}）</span>
             </figcaption>
           </figure>
 

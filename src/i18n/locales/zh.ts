@@ -150,10 +150,9 @@ const zh: Dictionary = {
     crowdfundingLabel: "众筹开始",
     crowdfundingDate: "2026年 7月",
     goalLabel: "目标金额",
-    progressUnit: "人",
-    progressCaption: "预约通知登记人数",
-    goalCaption: "目标",
-    usageHeading: "资金用途",
+    statusValue: "正为 Makuake 公开筹备中",
+    statusNote: "众筹进展将于公开后在此为您通报。",
+    usageHeading: "资金用途（预定）",
     usage: [
       "柴烧桑拿室・冷水浴的建造",
       "外气浴露台・休憩屋的整备",
@@ -204,6 +203,8 @@ const zh: Dictionary = {
   gallery: {
     eyebrow: "Gallery",
     title: "海沢，尚未见过的风景。",
+    imageNote: "※ 所示图片为效果示意图，可能与实际设施有所不同。",
+    imageBadge: "示意图",
     alts: [
       "静立于森林中、溪流旁的桑拿小屋",
       "海沢的清流",

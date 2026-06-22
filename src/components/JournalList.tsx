@@ -46,6 +46,9 @@ export function JournalList() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                     />
+                    <span className="pointer-events-none absolute right-2 top-2 rounded-full bg-ink/65 px-2.5 py-1 text-[0.6rem] tracking-widest2 text-cream/85 backdrop-blur-sm">
+                      {t.gallery.imageBadge}
+                    </span>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-center gap-3 text-xs">

@@ -13,11 +13,6 @@ export function Project() {
   const p = t.project;
   const cta = getPrimaryCta(locale, t.cta);
 
-  const pct = Math.min(
-    100,
-    Math.round((projectMeta.progress.current / projectMeta.progress.target) * 100)
-  );
-
   const facts = [
     { icon: CalendarDays, label: p.openingLabel, value: p.openingDate },
     { icon: Sparkles, label: p.crowdfundingLabel, value: p.crowdfundingDate },
@@ -51,32 +46,14 @@ export function Project() {
 
           <Reveal>
             <div className="rounded-2xl border border-white/10 bg-ink-card p-8 md:p-10">
-              <div className="flex items-end justify-between">
-                <div>
-                  <p className="font-display text-4xl text-gold">
-                    {projectMeta.progress.current.toLocaleString()}
-                    {p.progressUnit && (
-                      <span className="ml-1 text-lg text-cream/70">{p.progressUnit}</span>
-                    )}
-                  </p>
-                  <p className="mt-1 text-xs tracking-widest2 text-stone">{p.progressCaption}</p>
+              {/* 公開前のステータス（実数値が無いため架空の進捗は表示しない） */}
+              <div className="rounded-xl border border-gold/25 bg-gold/5 px-5 py-5">
+                <div className="flex items-center gap-2">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-gold" />
+                  <p className="font-serif text-base text-cream">{p.statusValue}</p>
                 </div>
-                <p className="font-display text-2xl text-cream/60">{pct}%</p>
+                <p className="mt-2 text-xs leading-relaxed text-stone">{p.statusNote}</p>
               </div>
-
-              <div className="mt-5 h-2 w-full overflow-hidden rounded-full bg-white/10">
-                <motion.div
-                  className="h-full rounded-full bg-gradient-to-r from-gold/70 to-gold"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${pct}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
-                />
-              </div>
-              <p className="mt-3 text-right text-xs text-stone">
-                {p.goalCaption} {projectMeta.progress.target.toLocaleString()}
-                {p.progressUnit}
-              </p>
 
               <h3 className="mt-10 font-serif text-sm tracking-widest2 text-cream">
                 {p.usageHeading}

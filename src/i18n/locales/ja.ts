@@ -148,10 +148,9 @@ const ja = {
     crowdfundingLabel: "クラウドファンディング開始",
     crowdfundingDate: "2026年 7月",
     goalLabel: "目標金額",
-    progressUnit: "名",
-    progressCaption: "事前通知ご登録者数",
-    goalCaption: "目標",
-    usageHeading: "支援金の用途",
+    statusValue: "Makuake公開に向けて準備中",
+    statusNote: "クラウドファンディングの進捗は公開後にこちらでお知らせします。",
+    usageHeading: "支援金の用途（予定）",
     usage: [
       "薪サウナ室・水風呂の建築",
       "外気浴デッキ・休憩棟の整備",
@@ -202,6 +201,8 @@ const ja = {
   gallery: {
     eyebrow: "Gallery",
     title: "海沢の、まだ見ぬ風景。",
+    imageNote: "※ 掲載画像は完成イメージです。実際の施設とは異なる場合があります。",
+    imageBadge: "イメージ",
     alts: [
       "森の中に佇むサウナ小屋と渓流",
       "海沢の清流",

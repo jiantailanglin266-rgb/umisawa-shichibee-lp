@@ -150,10 +150,9 @@ const ko: Dictionary = {
     crowdfundingLabel: "크라우드펀딩 시작",
     crowdfundingDate: "2026년 7월",
     goalLabel: "목표 금액",
-    progressUnit: "명",
-    progressCaption: "사전 알림 등록자 수",
-    goalCaption: "목표",
-    usageHeading: "후원금의 사용처",
+    statusValue: "Makuake 공개를 향해 준비 중",
+    statusNote: "크라우드펀딩 진행 상황은 공개 후 이곳에서 알려드립니다.",
+    usageHeading: "후원금의 사용처(예정)",
     usage: [
       "장작 사우나실・냉수욕 건축",
       "외기욕 데크・휴게동 정비",
@@ -204,6 +203,8 @@ const ko: Dictionary = {
   gallery: {
     eyebrow: "Gallery",
     title: "우나자와의, 아직 보지 못한 풍경.",
+    imageNote: "※ 게재 이미지는 완성 이미지이며, 실제 시설과 다를 수 있습니다.",
+    imageBadge: "이미지",
     alts: [
       "숲속 계류 곁에 자리한 사우나 오두막",
       "우나자와의 맑은 계류",
