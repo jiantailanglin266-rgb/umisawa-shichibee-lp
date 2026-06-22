@@ -58,6 +58,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href={`/${locale}/about`}
+                  className="text-sm text-cream/75 transition-colors hover:text-gold"
+                >
+                  {t.nav.about}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href={`/${locale}/reserve`}
                   className="text-sm text-gold/90 transition-colors hover:text-gold"
                 >
