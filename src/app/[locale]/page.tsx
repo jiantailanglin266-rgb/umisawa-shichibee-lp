@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Story } from "@/components/Story";
 import { PrayerSections } from "@/components/PrayerSections";
 import { Experience } from "@/components/Experience";
+import { AtmosphereBand } from "@/components/AtmosphereBand";
 import { Project } from "@/components/Project";
 import { SiteToday } from "@/components/SiteToday";
 import { Rewards } from "@/components/Rewards";
@@ -20,6 +21,7 @@ export default function Home() {
         <Story />
         <PrayerSections />
         <Experience />
+        <AtmosphereBand />
         <Project />
         <SiteToday />
         <Rewards />

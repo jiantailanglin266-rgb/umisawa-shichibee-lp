@@ -8,15 +8,6 @@ import { galleryItems } from "@/lib/data";
 import { asset } from "@/lib/site";
 import { useI18n } from "@/components/LocaleProvider";
 
-// 5枚のマガジン構成（横長フィーチャー + 縦4枚）
-const layout = [
-  "col-span-2 aspect-[16/10] md:aspect-auto md:col-span-7 md:row-span-2", // 0 forest cabin
-  "aspect-[3/4] md:aspect-auto md:col-span-5 md:row-span-2", // 1 stream
-  "aspect-[3/4] md:aspect-auto md:col-span-4 md:row-span-2", // 2 barrel
-  "aspect-[3/4] md:aspect-auto md:col-span-4 md:row-span-2", // 3 onsen
-  "aspect-[3/4] md:aspect-auto md:col-span-4 md:row-span-2", // 4 goods
-];
-
 export function Gallery() {
   const { t } = useI18n();
   const alts = t.gallery.alts;
@@ -56,14 +47,14 @@ export function Gallery() {
           {t.gallery.imageNote}
         </p>
 
-        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-12 md:auto-rows-[10rem] md:gap-4">
+        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
           {galleryItems.map((g, i) => (
             <button
               key={g.src}
               type="button"
               onClick={() => setIndex(i)}
               aria-label={alts[i]}
-              className={`group relative block overflow-hidden rounded-xl border border-white/10 ${layout[i]}`}
+              className="group relative block aspect-[3/4] overflow-hidden rounded-xl border border-white/10"
             >
               <Image
                 src={asset(g.src)}

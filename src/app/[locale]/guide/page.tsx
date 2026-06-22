@@ -5,6 +5,7 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { siteConfig } from "@/lib/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PageBanner } from "@/components/PageBanner";
 import { GuideContent } from "@/components/GuideContent";
 
 export async function generateMetadata({
@@ -29,11 +30,13 @@ export default async function GuidePage({
 }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
+  const t = getDictionary(locale);
 
   return (
     <>
       <Header />
       <main className="pt-20">
+        <PageBanner src="/banners/guide.webp" alt={t.guide.title} />
         <GuideContent />
       </main>
       <Footer />

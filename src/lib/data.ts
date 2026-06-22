@@ -7,12 +7,12 @@
 import type { LucideIcon } from "lucide-react";
 import { Flame, Snowflake, Trees, Droplets } from "lucide-react";
 
-/* ── Experience：アイコン・漢字・英字（4件、辞書 experience.items と対応）── */
-export const experienceMeta: { kanji: string; titleEn: string; icon: LucideIcon }[] = [
-  { kanji: "蒸", titleEn: "SAUNA", icon: Flame },
-  { kanji: "冷", titleEn: "COLD BATH", icon: Snowflake },
-  { kanji: "休", titleEn: "REST", icon: Trees },
-  { kanji: "癒", titleEn: "SPA", icon: Droplets },
+/* ── Experience：アイコン・漢字・英字・画像（4件、辞書 experience.items と対応）── */
+export const experienceMeta: { kanji: string; titleEn: string; icon: LucideIcon; image: string }[] = [
+  { kanji: "蒸", titleEn: "SAUNA", icon: Flame, image: "/experience/sauna.webp" },
+  { kanji: "冷", titleEn: "COLD BATH", icon: Snowflake, image: "/experience/cold.webp" },
+  { kanji: "休", titleEn: "REST", icon: Trees, image: "/experience/rest.webp" },
+  { kanji: "癒", titleEn: "SPA", icon: Droplets, image: "/experience/spa.webp" },
 ];
 
 /* ── Project：数値（ラベル等は辞書 project と対応）──────────── */
@@ -34,11 +34,15 @@ export const rewardMeta: { price: string }[] = [
 export type GalleryItem = { src: string };
 
 export const galleryItems: GalleryItem[] = [
-  { src: "/gallery/forest-cabin.jpg" }, // 0: 森のサウナ小屋と渓流（横長・フィーチャー）
-  { src: "/gallery/stream.jpg" }, // 1: 海沢の清流（縦）
-  { src: "/gallery/barrel-sauna.jpg" }, // 2: バレルサウナ（縦）
-  { src: "/gallery/onsen.jpg" }, // 3: 露天水風呂・温浴（縦）
-  { src: "/gallery/goods.jpg" }, // 4: サウナグッズ（縦）
+  { src: "/gallery/g3-sauna.webp" }, // 薪サウナの室内
+  { src: "/gallery/g4-loyly.webp" }, // セルフロウリュ
+  { src: "/gallery/g2-deck.webp" }, // 外気浴デッキ
+  { src: "/gallery/g1-cabin.webp" }, // 夕暮れの森のキャビン
+  { src: "/gallery/g7-exterior.webp" }, // 施設の外観
+  { src: "/gallery/g9-lounge.webp" }, // 夜のラウンジ
+  { src: "/gallery/g8-room.webp" }, // 客室
+  { src: "/gallery/g6-dining.webp" }, // お食事
+  { src: "/gallery/g5-ramen.webp" }, // サウナ飯
 ];
 
 /* ── Journal：記事メタ（タイトル・本文は辞書 journal.articles と対応）── */
