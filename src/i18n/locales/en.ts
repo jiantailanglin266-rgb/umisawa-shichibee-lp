@@ -18,6 +18,7 @@ const en: Dictionary = {
     access: "Access",
     news: "News",
     about: "About",
+    journal: "Journal",
   },
   cta: {
     notify: "Get notified on Makuake",
@@ -304,6 +305,46 @@ const en: Dictionary = {
     errEmail: "Please check the format of your email address.",
     notSelected: "Not selected",
     newReservation: "Make another reservation",
+  },
+  journal: {
+    eyebrow: "Journal",
+    title: "Journal",
+    lead: "Reflections on the sauna, the culture of healing, and the nature of Okutama — from Unazawa Shichibee.",
+    categories: { sauna: "Sauna", culture: "Culture", area: "Okutama" },
+    readMore: "Read article",
+    backToList: "Back to Journal",
+    articles: [
+      {
+        title: "What Is “Totonou”? The Mind-Body Attunement of the Sauna",
+        excerpt: "The clear, empty state reached through the cycle of sauna, cold bath and open-air rest — gently explained.",
+        body: [
+          "Warm the body in the sauna, cool it sharply in the cold bath, then surrender to the wind in the open air. The deep, clear sensation that arrives after repeating this cycle is the state known as “totonou” — being whole.",
+          "The hot-and-cold stimulus sways the autonomic nervous system, and in the recovery that follows, the heartbeat gently settles and the edges of thought come undone. The noise in your head quiets, leaving only the sense of being here, now.",
+          "This is not reserved for a special few. Once you know how to move through the cycle, it is a universal experience anyone can confirm in their own body.",
+          "At Unazawa Shichibee, we offer three elements — the heat of a wood-fired sauna, the natural water of Unazawa, and open-air rest in the forest — just as this land provides them. Not technique, but surrendering to nature. That is our idea of “totonou.”",
+        ],
+      },
+      {
+        title: "The Wisdom of Touji — Japan's Time to Heal",
+        excerpt: "Since ancient times, the Japanese have healed body and mind by soaking in hot water. What is the philosophy worth carrying into today?",
+        body: [
+          "“Touji” is a healing tradition passed down in Japan since ancient times: staying in a hot-spring area for an extended period, soaking in the water to mend body and mind.",
+          "It was never mere treatment. It was time spent away from daily life, surrendering to the rhythms of nature — resting a worn-out body and recovering slowly, in step with the turning seasons. A luxurious time of “doing nothing,” the very opposite of efficiency.",
+          "We who live in modern times have, before we knew it, forgotten how to pause. Forever chased by something, we have lost the room to listen to the voices of our heart and body.",
+          "Unazawa Shichibee aims to carry this wisdom of touji into a modern form: the sauna. Not to cure, but to attune. Not to consume, but to recover. Within the nature of Okutama, spend time returning to yourself.",
+        ],
+      },
+      {
+        title: "Walking Unazawa, Okutama — The Blessings of Water and Forest",
+        excerpt: "Two hours from the city. We introduce the little-known charms of Unazawa, held by clear streams and deep forest.",
+        body: [
+          "Okutama-machi, at the western edge of Tokyo. Even within it, Unazawa is a quiet valley untouched by tourism. Two hours by train from the city and about ten minutes by car from the station, a nature like another world unfolds.",
+          "A clear stream weaving between sheer rocks. Sunlight filtering through a moss-covered forest. All that reaches your ears is the ceaseless sound of water and the rustling of trees.",
+          "Unazawa is also home to the beautiful “Unazawa Three Falls,” which change their expression with the seasons — fresh green in spring, deep green in summer, blazing foliage in autumn, stillness in winter. Whenever you come, nature never rushes you.",
+          "This rich water and forest is the very reason Unazawa Shichibee chose this land. The open air you breathe after the sauna is not just air, but the blessing the forest of Okutama has nurtured. Please confirm the difference with all five senses.",
+        ],
+      },
+    ],
   },
   about: {
     eyebrow: "About",

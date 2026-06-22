@@ -127,6 +127,13 @@ export function Header() {
             <span className="tracking-wide">{t.nav.news}</span>
           </Link>
           <Link
+            href={`/${locale}/journal`}
+            onClick={() => setOpen(false)}
+            className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"
+          >
+            <span className="tracking-wide">{t.nav.journal}</span>
+          </Link>
+          <Link
             href={`/${locale}/about`}
             onClick={() => setOpen(false)}
             className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"

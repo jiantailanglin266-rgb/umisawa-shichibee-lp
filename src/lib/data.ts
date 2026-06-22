@@ -42,6 +42,19 @@ export const galleryItems: GalleryItem[] = [
   { src: "/gallery/goods.jpg" }, // 4: サウナグッズ（縦）
 ];
 
+/* ── Journal：記事メタ（タイトル・本文は辞書 journal.articles と対応）── */
+export type JournalCategory = "sauna" | "culture" | "area";
+export const journalMeta: {
+  slug: string;
+  date: string;
+  category: JournalCategory;
+  image: string;
+}[] = [
+  { slug: "what-is-totonou", date: "2026-06-18", category: "sauna", image: "/gallery/barrel-sauna.jpg" },
+  { slug: "culture-of-touji", date: "2026-06-12", category: "culture", image: "/gallery/onsen.jpg" },
+  { slug: "walking-unazawa", date: "2026-06-05", category: "area", image: "/gallery/stream.jpg" },
+];
+
 /* ── News：日付・カテゴリ（タイトル・本文は辞書 news.posts と対応）── */
 export type NewsCategory = "update" | "media" | "event" | "crowdfunding";
 export const newsMeta: { date: string; category: NewsCategory }[] = [
