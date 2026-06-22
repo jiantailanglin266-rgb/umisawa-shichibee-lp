@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { getPrimaryCta, siteConfig, asset } from "@/lib/site";
 import { useI18n } from "@/components/LocaleProvider";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { SocialLinks } from "@/components/SocialLinks";
+import { NavGroup } from "@/components/NavGroup";
 
 type Item = { label: string; href: string };
 type Group = { label: string; items: Item[] };
@@ -77,29 +78,7 @@ export function Header() {
         {/* PC ナビ（グループ別ドロップダウン） */}
         <nav className="hidden items-center gap-7 lg:flex">
           {menu.map((g) => (
-            <div key={g.label} className="group relative">
-              <button
-                type="button"
-                className="flex items-center gap-1 text-sm tracking-wide text-cream/80 transition-colors group-hover:text-cream"
-              >
-                {g.label}
-                <ChevronDown size={14} className="text-gold/70 transition-transform duration-300 group-hover:rotate-180" />
-              </button>
-              {/* pt-3 がボタンとパネルの隙間を埋め、ホバー継続を保証 */}
-              <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                <div className="min-w-[12rem] overflow-hidden rounded-xl border border-white/10 bg-ink/95 py-1.5 backdrop-blur-md">
-                  {g.items.map((it) => (
-                    <Link
-                      key={it.href}
-                      href={it.href}
-                      className="block px-5 py-2.5 text-sm tracking-wide text-cream/80 transition-colors hover:bg-white/5 hover:text-gold"
-                    >
-                      {it.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <NavGroup key={g.label} label={g.label} items={g.items} />
           ))}
 
           <span className="hidden h-4 w-px bg-white/15 xl:block" />
