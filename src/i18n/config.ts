@@ -20,6 +20,14 @@ export const ogLocale: Record<Locale, string> = {
   ko: "ko_KR",
 };
 
+/** Intl 用の BCP-47 ロケール（カレンダーの月名・曜日名に使用） */
+export const bcp47: Record<Locale, string> = {
+  ja: "ja-JP",
+  en: "en-US",
+  zh: "zh-CN",
+  ko: "ko-KR",
+};
+
 export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
