@@ -13,7 +13,7 @@ const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)
 const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`;
 
 // 動画の再生速度（1 = 等速。小さいほどゆっくり）
-const ROUTE_PLAYBACK_RATE = 0.5;
+const ROUTE_PLAYBACK_RATE = 0.35;
 
 export function AccessContent() {
   const { t } = useI18n();
