@@ -15,6 +15,7 @@ const zh: Dictionary = {
     gallery: "风景",
     faq: "问答",
     reserve: "预约",
+    access: "交通",
   },
   cta: {
     notify: "Makuake 公开时通知我",
@@ -298,6 +299,35 @@ const zh: Dictionary = {
     errEmail: "请确认电子邮箱的格式。",
     notSelected: "未选择",
     newReservation: "再次预约",
+  },
+  access: {
+    eyebrow: "Access",
+    title: "交通",
+    lead: "前往东京的隐世之境——奥多摩·海沢。远离都市喧嚣，约两小时的小小旅程。",
+    addressLabel: "地址",
+    address: "东京都西多摩郡奥多摩町 海沢",
+    mapButton: "在 Google 地图中打开",
+    byTrainTitle: "搭乘电车",
+    byTrain: [
+      "乘 JR 青梅线于「奥多摩站」下车。",
+      "自新宿站约 2 小时（经青梅・御岳换乘）。",
+      "自奥多摩站驾车约 10 分钟。",
+    ],
+    byCarTitle: "自驾前来",
+    byCar: [
+      "经中央道・圈央道，沿青梅街道（国道 411 号）往奥多摩方向。",
+      "自都心约 2 小时。",
+      "备有停车场（详情将于开业时告知）。",
+    ],
+    timeTitle: "所需时间参考",
+    times: [
+      { from: "新宿站", val: "电车约 2 小时" },
+      { from: "奥多摩站", val: "驾车约 10 分钟" },
+      { from: "都心（自驾）", val: "约 2 小时" },
+    ],
+    routeTitle: "从停车场到设施的路途",
+    routeCaption: "在现场拍摄的、从停车场起的步道。",
+    note: "正式路线、停车场及接送的详情，将于开业前在本页公开。",
   },
   privacy: {
     eyebrow: "Legal",

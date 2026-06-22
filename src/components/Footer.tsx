@@ -42,6 +42,14 @@ export function Footer() {
               ))}
               <li>
                 <Link
+                  href={`/${locale}/access`}
+                  className="text-sm text-cream/75 transition-colors hover:text-gold"
+                >
+                  {t.nav.access}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href={`/${locale}/reserve`}
                   className="text-sm text-gold/90 transition-colors hover:text-gold"
                 >

@@ -13,6 +13,7 @@ const ja = {
     gallery: "風景",
     faq: "問い",
     reserve: "予約",
+    access: "アクセス",
   },
   cta: {
     notify: "Makuake公開を通知",
@@ -296,6 +297,35 @@ const ja = {
     errEmail: "メールアドレスの形式をご確認ください。",
     notSelected: "未選択",
     newReservation: "別の予約をする",
+  },
+  access: {
+    eyebrow: "Access",
+    title: "アクセス",
+    lead: "東京の奥座敷、奥多摩・海沢へ。都心の喧騒を離れ、約2時間の小さな旅。",
+    addressLabel: "所在地",
+    address: "東京都西多摩郡奥多摩町 海沢",
+    mapButton: "Googleマップで開く",
+    byTrainTitle: "電車でお越しの方",
+    byTrain: [
+      "JR青梅線「奥多摩駅」下車。",
+      "新宿駅から約2時間（青梅・御嶽方面へ乗り換え）。",
+      "奥多摩駅よりお車で約10分。",
+    ],
+    byCarTitle: "お車でお越しの方",
+    byCar: [
+      "中央道・圏央道から青梅街道（国道411号）を奥多摩方面へ。",
+      "都心から約2時間。",
+      "駐車場あり（詳細はオープン時にご案内）。",
+    ],
+    timeTitle: "所要時間の目安",
+    times: [
+      { from: "新宿駅", val: "電車で約2時間" },
+      { from: "奥多摩駅", val: "車で約10分" },
+      { from: "都心（車）", val: "約2時間" },
+    ],
+    routeTitle: "駐車場から施設までの道のり",
+    routeCaption: "現地で撮影した、駐車場からのアプローチ。",
+    note: "正式な経路・駐車場・送迎の詳細は、オープン前に本ページにて公開いたします。",
   },
   privacy: {
     eyebrow: "Legal",

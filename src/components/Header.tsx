@@ -55,14 +55,23 @@ export function Header() {
             </Link>
           ))}
           <Link
+            href={`/${locale}/access`}
+            className="group relative text-sm tracking-wide text-cream/80 transition-colors hover:text-cream"
+          >
+            {t.nav.access}
+            <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+          </Link>
+          <Link
             href={`/${locale}/reserve`}
             className="group relative text-sm tracking-wide text-gold transition-colors hover:text-cream"
           >
             {t.nav.reserve}
             <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
           </Link>
-          <span className="h-4 w-px bg-white/15" />
-          <SocialLinks />
+          <span className="hidden h-4 w-px bg-white/15 xl:block" />
+          <div className="hidden xl:block">
+            <SocialLinks />
+          </div>
           <LanguageSwitcher />
           <a
             href={cta.href}
@@ -103,6 +112,13 @@ export function Header() {
               <span className="tracking-wide">{t.nav[l.key as keyof typeof t.nav]}</span>
             </Link>
           ))}
+          <Link
+            href={`/${locale}/access`}
+            onClick={() => setOpen(false)}
+            className="flex items-center justify-between border-b border-white/5 py-3 text-cream/85"
+          >
+            <span className="tracking-wide">{t.nav.access}</span>
+          </Link>
           <Link
             href={`/${locale}/reserve`}
             onClick={() => setOpen(false)}

@@ -15,6 +15,7 @@ const en: Dictionary = {
     gallery: "Gallery",
     faq: "FAQ",
     reserve: "Reserve",
+    access: "Access",
   },
   cta: {
     notify: "Get notified on Makuake",
@@ -301,6 +302,35 @@ const en: Dictionary = {
     errEmail: "Please check the format of your email address.",
     notSelected: "Not selected",
     newReservation: "Make another reservation",
+  },
+  access: {
+    eyebrow: "Access",
+    title: "Access",
+    lead: "To Unazawa, Okutama — Tokyo's hidden retreat. A small journey of about two hours, away from the city's bustle.",
+    addressLabel: "Address",
+    address: "Unazawa, Okutama-machi, Nishitama, Tokyo",
+    mapButton: "Open in Google Maps",
+    byTrainTitle: "By Train",
+    byTrain: [
+      "Get off at Okutama Station on the JR Ome Line.",
+      "About 2 hours from Shinjuku (transfer via Ome / Mitake).",
+      "About a 10-minute drive from Okutama Station.",
+    ],
+    byCarTitle: "By Car",
+    byCar: [
+      "Via the Chuo / Ken-O Expressway, take Ome-kaido (Route 411) toward Okutama.",
+      "About 2 hours from central Tokyo.",
+      "Parking available (details announced at opening).",
+    ],
+    timeTitle: "Approximate travel times",
+    times: [
+      { from: "Shinjuku Sta.", val: "approx. 2 hrs by train" },
+      { from: "Okutama Sta.", val: "approx. 10 min by car" },
+      { from: "Central Tokyo (car)", val: "approx. 2 hrs" },
+    ],
+    routeTitle: "From the parking to the site",
+    routeCaption: "The approach from the parking lot, filmed on site.",
+    note: "Detailed routes, parking and shuttle information will be published on this page before opening.",
   },
   privacy: {
     eyebrow: "Legal",

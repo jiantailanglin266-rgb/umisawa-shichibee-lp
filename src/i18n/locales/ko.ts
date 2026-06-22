@@ -15,6 +15,7 @@ const ko: Dictionary = {
     gallery: "풍경",
     faq: "문의",
     reserve: "예약",
+    access: "오시는 길",
   },
   cta: {
     notify: "Makuake 공개 알림 받기",
@@ -298,6 +299,35 @@ const ko: Dictionary = {
     errEmail: "이메일 주소의 형식을 확인해 주세요.",
     notSelected: "미선택",
     newReservation: "다른 예약하기",
+  },
+  access: {
+    eyebrow: "Access",
+    title: "오시는 길",
+    lead: "도쿄의 숨은 안뜰, 오쿠타마·우나자와로. 도심의 번잡함을 떠나, 약 2시간의 작은 여행.",
+    addressLabel: "소재지",
+    address: "도쿄도 니시타마군 오쿠타마마치 우나자와",
+    mapButton: "Google 지도에서 열기",
+    byTrainTitle: "전철로 오시는 분",
+    byTrain: [
+      "JR 오메선 '오쿠타마역' 하차.",
+      "신주쿠역에서 약 2시간 (오메·미타케 방면 환승).",
+      "오쿠타마역에서 차로 약 10분.",
+    ],
+    byCarTitle: "차로 오시는 분",
+    byCar: [
+      "주오도·켄오도에서 오메가도(국도 411호)를 따라 오쿠타마 방면으로.",
+      "도심에서 약 2시간.",
+      "주차장 있음 (자세한 내용은 개업 시 안내).",
+    ],
+    timeTitle: "예상 소요 시간",
+    times: [
+      { from: "신주쿠역", val: "전철로 약 2시간" },
+      { from: "오쿠타마역", val: "차로 약 10분" },
+      { from: "도심(차)", val: "약 2시간" },
+    ],
+    routeTitle: "주차장에서 시설까지의 길",
+    routeCaption: "현지에서 촬영한, 주차장에서의 진입로.",
+    note: "정식 경로・주차장・셔틀의 자세한 내용은 개업 전 본 페이지에서 공개합니다.",
   },
   privacy: {
     eyebrow: "Legal",
