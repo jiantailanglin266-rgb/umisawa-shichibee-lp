@@ -16,6 +16,7 @@ const en: Dictionary = {
     faq: "FAQ",
     reserve: "Reserve",
     access: "Access",
+    news: "News",
   },
   cta: {
     notify: "Get notified on Makuake",
@@ -302,6 +303,31 @@ const en: Dictionary = {
     errEmail: "Please check the format of your email address.",
     notSelected: "Not selected",
     newReservation: "Make another reservation",
+  },
+  news: {
+    eyebrow: "News",
+    title: "News",
+    lead: "The latest updates, progress and media coverage from Unazawa Shichibee.",
+    categories: {
+      update: "Update",
+      media: "Media",
+      event: "Event",
+      crowdfunding: "Crowdfunding",
+    },
+    posts: [
+      {
+        title: "Our official website is now live in four languages",
+        body: "The official website of Unazawa Shichibee SAUNA & SPA is now live in Japanese, English, Chinese and Korean. We'll share news toward our Makuake launch right here.",
+      },
+      {
+        title: "Pre-launch notifications are now open",
+        body: "We've begun accepting pre-launch email notifications so you'll be the first to know when Makuake goes live. Register via the form at the bottom of the site.",
+      },
+      {
+        title: "The Unazawa Shichibee project has begun",
+        body: "A project to revive the idle land of Unazawa, Okutama and create a modern healing retreat has begun. We aim for a place where Nordic sauna, Japanese Buddhist aesthetics and the nature of Okutama meet.",
+      },
+    ],
   },
   access: {
     eyebrow: "Access",

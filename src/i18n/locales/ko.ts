@@ -16,6 +16,7 @@ const ko: Dictionary = {
     faq: "문의",
     reserve: "예약",
     access: "오시는 길",
+    news: "소식",
   },
   cta: {
     notify: "Makuake 공개 알림 받기",
@@ -299,6 +300,31 @@ const ko: Dictionary = {
     errEmail: "이메일 주소의 형식을 확인해 주세요.",
     notSelected: "미선택",
     newReservation: "다른 예약하기",
+  },
+  news: {
+    eyebrow: "News",
+    title: "소식",
+    lead: "우나자와 시치베에의 최신 정보・진행 상황・미디어 게재 소식을 전합니다.",
+    categories: {
+      update: "소식",
+      media: "미디어",
+      event: "이벤트",
+      crowdfunding: "크라우드펀딩",
+    },
+    posts: [
+      {
+        title: "공식 웹사이트를 4개 언어로 공개했습니다",
+        body: "우나자와 시치베에 SAUNA & SPA 공식 웹사이트를 일본어・영어・중국어・한국어 4개 언어로 공개했습니다. Makuake 공개를 향한 소식을 이곳에서 수시로 전해드립니다.",
+      },
+      {
+        title: "사전 알림 접수를 시작했습니다",
+        body: "Makuake 공개 소식을 가장 먼저 전해드리는 사전 알림 메일 접수를 시작했습니다. 사이트 하단의 폼에서 등록하실 수 있습니다.",
+      },
+      {
+        title: "우나자와 시치베에 프로젝트가 시작되었습니다",
+        body: "오쿠타마·우나자와의 유휴지를 되살려 현대의 탕치소를 만드는 프로젝트가 시작되었습니다. 북유럽 사우나 × 일본 불교미 × 오쿠타마의 자연이 어우러지는 곳을 지향합니다.",
+      },
+    ],
   },
   access: {
     eyebrow: "Access",

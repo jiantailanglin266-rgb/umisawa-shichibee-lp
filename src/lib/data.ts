@@ -42,6 +42,14 @@ export const galleryItems: GalleryItem[] = [
   { src: "/gallery/goods.jpg" }, // 4: サウナグッズ（縦）
 ];
 
+/* ── News：日付・カテゴリ（タイトル・本文は辞書 news.posts と対応）── */
+export type NewsCategory = "update" | "media" | "event" | "crowdfunding";
+export const newsMeta: { date: string; category: NewsCategory }[] = [
+  { date: "2026-06-20", category: "update" },
+  { date: "2026-06-10", category: "update" },
+  { date: "2026-06-01", category: "update" },
+];
+
 /* ── SiteToday：現地の実写真（alt/caption は辞書 siteNow.items と対応）── */
 export const siteItems: { src: string }[] = [
   { src: "/site/land.jpg" }, // 再生を待つ土地

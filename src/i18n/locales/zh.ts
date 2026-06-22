@@ -16,6 +16,7 @@ const zh: Dictionary = {
     faq: "问答",
     reserve: "预约",
     access: "交通",
+    news: "最新消息",
   },
   cta: {
     notify: "Makuake 公开时通知我",
@@ -299,6 +300,31 @@ const zh: Dictionary = {
     errEmail: "请确认电子邮箱的格式。",
     notSelected: "未选择",
     newReservation: "再次预约",
+  },
+  news: {
+    eyebrow: "News",
+    title: "最新消息",
+    lead: "为您送上海沢 七兵衛的最新资讯、进展与媒体报道。",
+    categories: {
+      update: "消息",
+      media: "媒体",
+      event: "活动",
+      crowdfunding: "众筹",
+    },
+    posts: [
+      {
+        title: "官方网站已以四种语言上线",
+        body: "海沢 七兵衛 SAUNA & SPA 官方网站已以日语、英语、中文、韩语四种语言上线。面向 Makuake 公开的资讯，将在此随时为您送上。",
+      },
+      {
+        title: "已开始受理预约通知",
+        body: "为第一时间向您传达 Makuake 公开的消息，我们已开始受理预约通知邮件。可通过网站下方的表单登记。",
+      },
+      {
+        title: "海沢 七兵衛 项目正式启动",
+        body: "重生奥多摩·海沢的闲置土地、打造现代汤治之所的项目正式启动。我们志在打造北欧桑拿 × 日本佛教之美 × 奥多摩自然交汇之地。",
+      },
+    ],
   },
   access: {
     eyebrow: "Access",
