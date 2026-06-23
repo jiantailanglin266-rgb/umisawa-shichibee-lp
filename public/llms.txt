@@ -1,0 +1,29 @@
+# 海沢 七兵衛 SAUNA & SPA (Unazawa Shichibee)
+
+> A premium wood-fired sauna and spa in Unazawa, Okutama, Tokyo, Japan — a "modern-day touji (healing retreat)" where Nordic sauna, Japanese Buddhist aesthetics and the nature of Okutama meet. This is the official multilingual brand site (Japanese / English / Chinese / Korean), published ahead of a Makuake crowdfunding campaign. Concept: "Tranquility is close to prayer."
+
+## Key facts
+- Name: 海沢 七兵衛 SAUNA & SPA (Unazawa Shichibee Sauna & Spa)
+- Location: 海沢, 奥多摩町, 西多摩郡, 東京都 (Unazawa, Okutama-machi, Nishitama, Tokyo, Japan)
+- Status: Pre-launch. Crowdfunding (Makuake) planned for July 2026; opening planned for autumn 2026.
+- Offering: wood-fired sauna, natural-water cold bath, open-air forest rest, spa/relaxation, dining with local ingredients.
+- Hours (planned): 10:00–22:00 (last entry 21:00).
+- Price (planned): ¥3,500–¥30,000 (standard bathing ¥3,500 / pair ¥6,500 / private booking ¥30,000 / monthly membership ¥15,000).
+- Access: about 10 minutes by car from Okutama Station (JR Ome Line); about 2 hours from Shinjuku, Tokyo.
+- Languages: ja, en, zh, ko.
+- Note: Some facility visuals are AI-generated concept images; some photos are documentary shots of the actual site. Prices and hours are provisional until opening.
+
+## Pages
+- [Home](https://jiantailanglin266-rgb.github.io/umisawa-shichibee-lp/en/): brand story, experience, project, gallery, FAQ.
+- [About](https://jiantailanglin266-rgb.github.io/umisawa-shichibee-lp/en/about): founder's message and company overview.
+- [Access](https://jiantailanglin266-rgb.github.io/umisawa-shichibee-lp/en/access): map, directions, travel times.
+- [Pricing](https://jiantailanglin266-rgb.github.io/umisawa-shichibee-lp/en/pricing): plans and options.
+- [Visitor Guide](https://jiantailanglin266-rgb.github.io/umisawa-shichibee-lp/en/guide): hours, how to use, etiquette.
+- [Reservation](https://jiantailanglin266-rgb.github.io/umisawa-shichibee-lp/en/reserve): reservation request form.
+- [Journal](https://jiantailanglin266-rgb.github.io/umisawa-shichibee-lp/en/journal): articles on sauna culture and Okutama.
+- [News](https://jiantailanglin266-rgb.github.io/umisawa-shichibee-lp/en/news): updates and announcements.
+
+## Journal articles
+- What Is "Totonou"? The Mind-Body Attunement of the Sauna.
+- The Wisdom of Touji — Japan's Time to Heal.
+- Walking Unazawa, Okutama — The Blessings of Water and Forest.

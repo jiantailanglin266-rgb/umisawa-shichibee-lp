@@ -12,7 +12,7 @@ export function GuideContent() {
   return (
     <section className="relative py-28 md:py-36">
       <div className="container-x max-w-4xl">
-        <SectionHeading align="center" eyebrow={g.eyebrow} title={g.title} />
+        <SectionHeading as="h1" align="center" eyebrow={g.eyebrow} title={g.title} />
         <p className="mx-auto mt-6 max-w-2xl text-center leading-loose text-cream/70">{g.lead}</p>
 
         {/* 営業時間・予約 */}

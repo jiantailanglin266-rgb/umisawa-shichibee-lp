@@ -22,7 +22,7 @@ export function NewsContent() {
   return (
     <section className="relative py-28 md:py-36">
       <div className="container-x max-w-3xl">
-        <SectionHeading align="center" eyebrow={n.eyebrow} title={n.title} />
+        <SectionHeading as="h1" align="center" eyebrow={n.eyebrow} title={n.title} />
         <p className="mx-auto mt-6 max-w-2xl text-center leading-loose text-cream/70">{n.lead}</p>
 
         <ol className="mt-16 space-y-5">

@@ -7,6 +7,7 @@ import { journalMeta } from "@/lib/data";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JournalArticle } from "@/components/JournalArticle";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/StructuredData";
 
 export const dynamicParams = false;
 
@@ -45,10 +46,31 @@ export default async function JournalArticlePage({
 }) {
   const { locale, slug } = await params;
   if (!isLocale(locale)) notFound();
-  if (!journalMeta.some((m) => m.slug === slug)) notFound();
+  const index = journalMeta.findIndex((m) => m.slug === slug);
+  if (index < 0) notFound();
+
+  const t = getDictionary(locale);
+  const meta = journalMeta[index];
+  const art = t.journal.articles[index];
+  const articleUrl = `${siteConfig.url}/${locale}/journal/${slug}`;
 
   return (
     <>
+      <ArticleJsonLd
+        headline={art.title}
+        description={art.excerpt}
+        image={`${siteConfig.url}${meta.image}`}
+        url={articleUrl}
+        datePublished={meta.date}
+        locale={locale}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: siteConfig.name, url: `${siteConfig.url}/${locale}` },
+          { name: t.journal.title, url: `${siteConfig.url}/${locale}/journal` },
+          { name: art.title, url: articleUrl },
+        ]}
+      />
       <Header />
       <main className="pt-20">
         <JournalArticle slug={slug} />

@@ -1,22 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Serif_JP, Cormorant_Garamond } from "next/font/google";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
-
-const notoSerifJp = Noto_Serif_JP({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-noto-serif-jp",
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   themeColor: "#0D0D0D",
@@ -24,25 +8,19 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-// 既定メタデータ（各ロケールの layout が上書き）
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: `${siteConfig.name}｜${siteConfig.tagline}`,
-  description: siteConfig.description,
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
-  // <html lang> は既定で ja。ロケールページでは LocaleProvider が補正する。
-  return (
-    <html lang="ja" className={`${notoSerifJp.variable} ${cormorant.variable}`}>
-      <body>{children}</body>
-    </html>
-  );
+/**
+ * パススルーのルートレイアウト。<html>/<body> は app/[locale]/layout が
+ * ロケール別の lang 付きで描画する（静的HTMLでも正しい lang を出力するため）。
+ */
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return children;
 }

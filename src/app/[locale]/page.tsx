@@ -1,3 +1,6 @@
+import { isLocale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
+import { FaqJsonLd } from "@/components/StructuredData";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Story } from "@/components/Story";
@@ -12,9 +15,12 @@ import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = isLocale(locale) ? getDictionary(locale) : null;
   return (
     <>
+      {t && <FaqJsonLd items={t.faq.items} locale={locale} />}
       <Header />
       <main>
         <Hero />

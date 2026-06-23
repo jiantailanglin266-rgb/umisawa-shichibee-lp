@@ -39,7 +39,7 @@ export function AccessContent() {
   return (
     <section className="relative py-28 md:py-36">
       <div className="container-x max-w-5xl">
-        <SectionHeading align="center" eyebrow={a.eyebrow} title={a.title} />
+        <SectionHeading as="h1" align="center" eyebrow={a.eyebrow} title={a.title} />
         <p className="mx-auto mt-6 max-w-2xl text-center leading-loose text-cream/70">{a.lead}</p>
 
         {/* 地図 */}

@@ -13,7 +13,7 @@ export function AboutContent() {
   return (
     <section className="relative py-28 md:py-36">
       <div className="container-x max-w-5xl">
-        <SectionHeading align="center" eyebrow={a.eyebrow} title={a.title} />
+        <SectionHeading as="h1" align="center" eyebrow={a.eyebrow} title={a.title} />
 
         {/* 代表メッセージ */}
         <div className="mt-16 grid items-center gap-10 md:mt-20 lg:grid-cols-12 lg:gap-16">
