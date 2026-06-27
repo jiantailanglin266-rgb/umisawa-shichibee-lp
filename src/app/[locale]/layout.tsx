@@ -34,7 +34,7 @@ export async function generateMetadata({
   languages["x-default"] = `${siteConfig.url}/ja`;
 
   return {
-    title: { default: t.meta.title, template: `%s｜${siteConfig.name}` },
+    title: { default: t.meta.title, template: `%s｜${t.meta.titleSuffix}` },
     description: t.meta.description,
     keywords: keywords[locale],
     authors: [{ name: siteConfig.name }],

@@ -3,9 +3,10 @@ import type { Dictionary } from "./ja";
 // 한국어
 const ko: Dictionary = {
   meta: {
-    title: "우나자와 시치베에 SAUNA & SPA｜정돈은, 기도에 가깝다.",
+    title: "오쿠타마 사우나＆스파｜우나자와 시치베에",
+    titleSuffix: "우나자와 시치베에 — 오쿠타마 사우나＆스파",
     description:
-      "도쿄·오쿠타마 우나자와. 북유럽 사우나 × 일본 불교미 × 오쿠타마의 자연이 어우러지는 '현대의 탕치(湯治)'. Makuake 크라우드펀딩 공개를 앞둔 브랜드 프로젝트.",
+      "오쿠타마·우나자와의 장작 사우나＆스파 '우나자와 시치베에'. 북유럽식 사우나와 천연수 냉수욕, 숲의 외기욕. 도쿄에서 약 2시간, 오쿠타마 자연 속 현대의 탕치소. Makuake 공개 준비 중.",
   },
   nav: {
     story: "이야기",
@@ -32,6 +33,7 @@ const ko: Dictionary = {
   },
   hero: {
     eyebrow: "UNAZAWA SHICHIBEE — Okutama",
+    srHeading: "우나자와 시치베에｜오쿠타마의 사우나＆스파 (장작 사우나・천연수 냉수욕・숲 외기욕)",
     titleLines: ["정돈은,", "기도에 가깝다."],
     subLines: ["우나자와의 자연에 안겨,", "깊은 고요 속에서 나를 되찾다."],
     scrollAria: "아래로 스크롤",

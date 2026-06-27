@@ -3,9 +3,10 @@ import type { Dictionary } from "./ja";
 // 简体中文
 const zh: Dictionary = {
   meta: {
-    title: "海沢 七兵衛 SAUNA & SPA｜调息，近乎祈祷。",
+    title: "奥多摩 桑拿＆水疗｜海沢 七兵衛 SAUNA & SPA",
+    titleSuffix: "海沢 七兵衛 — 奥多摩 桑拿＆水疗",
     description:
-      "东京·奥多摩 海沢。北欧桑拿 × 日本佛教之美 × 奥多摩自然交汇的「现代汤治之所」。面向 Makuake 众筹公开的品牌项目。",
+      "奥多摩·海沢的柴烧桑拿＆水疗「海沢 七兵衛」。北欧式桑拿与天然水冷水浴、森林外气浴。距东京约2小时，奥多摩自然中的现代汤治之所。Makuake 公开筹备中。",
   },
   nav: {
     story: "故事",
@@ -32,6 +33,7 @@ const zh: Dictionary = {
   },
   hero: {
     eyebrow: "UNAZAWA SHICHIBEE — Okutama",
+    srHeading: "海沢 七兵衛｜奥多摩的桑拿＆水疗（柴烧桑拿・天然水冷水浴・森林外气浴）",
     titleLines: ["调息，", "近乎祈祷。"],
     subLines: ["在海沢的自然怀抱中，", "于深邃静谧里重寻自我。"],
     scrollAria: "向下滚动",

@@ -85,11 +85,15 @@ export function Hero() {
           transition={{ duration: 1.4, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="heading text-balance text-4xl leading-[1.3] drop-shadow-[0_2px_24px_rgba(0,0,0,0.6)] sm:text-5xl md:text-6xl lg:text-7xl"
         >
-          {t.hero.titleLines.map((line, i) => (
-            <span key={i} className="block">
-              {line}
-            </span>
-          ))}
+          {/* SEO/LLMO 用のキーワードH1（視覚的には非表示、読み上げ・クローラー向け） */}
+          <span className="sr-only">{t.hero.srHeading}</span>
+          <span aria-hidden="true">
+            {t.hero.titleLines.map((line, i) => (
+              <span key={i} className="block">
+                {line}
+              </span>
+            ))}
+          </span>
         </motion.h1>
 
         <motion.p

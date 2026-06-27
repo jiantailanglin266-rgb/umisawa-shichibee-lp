@@ -3,9 +3,10 @@ import type { Dictionary } from "./ja";
 // English
 const en: Dictionary = {
   meta: {
-    title: "UNAZAWA SHICHIBEE SAUNA & SPA｜Tranquility is close to prayer.",
+    title: "Sauna & Spa in Okutama, Tokyo｜UNAZAWA SHICHIBEE",
+    titleSuffix: "UNAZAWA SHICHIBEE — Okutama Sauna & Spa",
     description:
-      "Unazawa, Okutama, Tokyo. A modern-day healing retreat where Nordic sauna, Japanese Buddhist aesthetics and the nature of Okutama meet. A brand project ahead of its Makuake crowdfunding launch.",
+      "Unazawa Shichibee — a wood-fired sauna & spa in Okutama, Tokyo. Nordic-style sauna, natural-water cold bath and forest open-air rest. About 2 hours from central Tokyo: a modern healing retreat (touji). Launching on Makuake.",
   },
   nav: {
     story: "Story",
@@ -32,6 +33,7 @@ const en: Dictionary = {
   },
   hero: {
     eyebrow: "UNAZAWA SHICHIBEE — Okutama",
+    srHeading: "Unazawa Shichibee — Sauna & Spa in Okutama, Tokyo (wood-fired sauna, natural-water cold bath, forest open-air rest)",
     titleLines: ["Tranquility", "is close to prayer."],
     subLines: [
       "Embraced by the nature of Unazawa,",
